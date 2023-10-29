@@ -10,10 +10,16 @@ import DarkModeToggle from "./DarkModeToggle.astro";
   >
     Skip to content
   </a>
-  <img src="/public/images/cat.png" width="48" height="48" class="absolute left-0"/>
+  <img
+    src="/public/images/cat.png"
+    width="48"
+    height="48"
+    class="absolute hidden sm:flex sm:left-0"
+  />
+
   <Nav />
-  <div
-    class="justify-self-end py-2 flex items-center content-center text-text-bold"
+  <!-- <div
+    class="justify-self-end py-2 items-center content-center text-text-bold hidden sm:flex"
   >
     <a
       class="unset ml-4 rounded-sm transition-[background-size] duration-150 ease-in-out bg-left-bottom bg-[length:0%_55%] hover:bg-[length:100%_55%] bg-no-repeat bg-gradient-to-r from-primary-yellow to-primary-yellow dark:bg-none dark:hover:text-primary-yellow"
@@ -29,7 +35,7 @@ import DarkModeToggle from "./DarkModeToggle.astro";
       <i class="fa-brands fa-twitter" aria-hidden="true" title="Dinesh on Twitter"></i>
       <span>Twitter</span>
     </a>
-  </div>
+  </div> -->
   <DarkModeToggle />
 </header>
 <style>
