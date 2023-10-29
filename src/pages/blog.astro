@@ -33,48 +33,54 @@ const sortedPosts = posts
             day: "numeric",
           });
           return (
-            <li class="flex bg-slate-800">
-              <div class="w-48">
-                <img src={post.frontmatter.image} alt="image" class="w-full" />
-              </div>
-              <div class="flex flex-col">
-                <div class="title p-2">
-                  {post.frontmatter.external ? (
-                    <a
-                      href={post.frontmatter.url}
-                      target="_blank"
-                      class="unset
+            <li class="flex cursor-pointer shadow-lg">
+              <a href={`/blog/${post.slug}`}>
+                <div class="w-48">
+                  <img
+                    src={post.frontmatter.image}
+                    alt="image"
+                    class="w-full"
+                  />
+                </div>
+                <div class="flex flex-col p-2 justify-items-stretch">
+                  <div class="title flex-1">
+                    {post.frontmatter.external ? (
+                      <a
+                        href={post.frontmatter.url}
+                        target="_blank"
+                        class="unset
                         transition-[background-size] duration-300 
                         bg-gradient-to-r bg-left-bottom bg-no-repeat
                         bg-[length:0%_55%] hover:bg-[length:100%_55%] dark:bg-[length:0%_2px] hover:dark:bg-[length:100%_2px]
                         from-primary-blue to-primary-blue dark:from-primary-blue dark:to-primary-blue
                       "
-                    >
-                      <span>{post.frontmatter.title}</span>
-                      <span>
-                        <i class="ml-1 mr-1 text-[12px] pb-2 fa-solid fa-up-right-from-square" />
-                      </span>
-                    </a>
-                  ) : (
-                    <a
-                      href={`/blog/${post.slug}`}
-                      class="unset
+                      >
+                        <span>{post.frontmatter.title}</span>
+                        <span>
+                          <i class="ml-1 mr-1 text-[12px] pb-2 fa-solid fa-up-right-from-square" />
+                        </span>
+                      </a>
+                    ) : (
+                      <a
+                        href={`/blog/${post.slug}`}
+                        class="unset
                         transition-[background-size] duration-300 
                         bg-gradient-to-r bg-left-bottom bg-no-repeat
                         bg-[length:0%_55%] hover:bg-[length:100%_55%] dark:bg-[length:0%_2px] hover:dark:bg-[length:100%_2px]
                         from-primary-blue to-primary-blue dark:from-primary-blue dark:to-primary-blue
                       "
-                    >
-                      {post.frontmatter.title}
-                    </a>
-                  )}
+                      >
+                        {post.frontmatter.title}
+                      </a>
+                    )}
+                  </div>
+                  <div class="text-text-muted text-sm italic justify-self-end">
+                    <time datetime={post.frontmatter.date.toISOString()}>
+                      {formattedDate}
+                    </time>
+                  </div>
                 </div>
-                <div class="text-text-muted text-sm italic pt-1 p-2">
-                  <time datetime={post.frontmatter.date.toISOString()}>
-                    {formattedDate}
-                  </time>
-                </div>
-              </div>
+              </a>
             </li>
           );
         })

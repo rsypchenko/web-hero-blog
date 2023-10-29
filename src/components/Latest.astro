@@ -1,0 +1,78 @@
+---
+import { readAll } from "../lib/markdoc/read";
+import { blog } from "../lib/markdoc/frontmatter.schema";
+
+const posts = await readAll({
+  directory: "blog",
+  frontmatterSchema: blog,
+});
+
+const sortedPosts = posts
+  .filter((p) => p.frontmatter.draft !== true)
+  .sort(
+    (a, b) =>
+      new Date(b.frontmatter.date).valueOf() -
+      new Date(a.frontmatter.date).valueOf()
+  )
+  .slice(0, 3);
+---
+
+<section class="mb-8">
+  <p class="text-2xl pb-4 text-center">Check The Latest Posts</p>
+
+  <div class="flex justify-between">
+    {
+      sortedPosts.map((post) => {
+        const formattedDate = new Date(
+          post.frontmatter.date
+        ).toLocaleDateString("en-us", {
+          year: "numeric",
+          month: "short",
+          day: "numeric",
+        });
+        return (
+          <div class="w-48 flex flex-col cursor-pointer shadow-lg">
+            <a href={`/blog/${post.slug}`}>
+              <div class="w-48">
+                <img src={post.frontmatter.image} loading="lazy" alt="image" class="w-full" />
+              </div>
+              <div class="flex">
+                <div class="title">
+                  {post.frontmatter.external ? (
+                    <a
+                      href={post.frontmatter.url}
+                      target="_blank"
+                      class="unset
+                      transition-[background-size] duration-300 
+                      bg-gradient-to-r bg-left-bottom bg-no-repeat
+                      bg-[length:0%_55%] hover:bg-[length:100%_55%] dark:bg-[length:0%_2px] hover:dark:bg-[length:100%_2px]
+                      from-primary-blue to-primary-blue dark:from-primary-blue dark:to-primary-blue
+                    "
+                    >
+                      <span>{post.frontmatter.title}</span>
+                      <span>
+                        <i class="ml-1 mr-1 text-[12px] pb-2 fa-solid fa-up-right-from-square" />
+                      </span>
+                    </a>
+                  ) : (
+                    <a
+                      href={`/blog/${post.slug}`}
+                      class="unset
+                      transition-[background-size] duration-300 
+                      bg-gradient-to-r bg-left-bottom bg-no-repeat
+                      bg-[length:0%_55%] hover:bg-[length:100%_55%] dark:bg-[length:0%_2px] hover:dark:bg-[length:100%_2px]
+                      from-primary-blue to-primary-blue dark:from-primary-blue dark:to-primary-blue
+                    "
+                    >
+                      {post.frontmatter.title}
+                    </a>
+                  )}
+                </div>
+              </div>
+            </a>
+          </div>
+        );
+      })
+    }
+  </div>
+</section>

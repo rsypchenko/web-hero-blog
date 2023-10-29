@@ -1,5 +1,3 @@
-# Blogster
-
 Web Development Blog build with Astro
 
 ## How do I add content?
