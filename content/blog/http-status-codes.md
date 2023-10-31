@@ -4,10 +4,10 @@ draft: false
 title: HTTP Status Codes - Developer`s Guide
 description: Exploring most popular http status codes
 date: 2023-10-12
-image: '/images/http.png'
+image: '/images/http.webp'
 ---
 
-![Blogster](/images/http.png)
+![Blogster](/images/http.webp)
 
 In the vast landscape of web development, communication between servers and clients relies heavily on HTTP status codes. These three-digit numbers encapsulate the outcome of every request and provide developers with valuable insights into the success or failure of their interactions with APIs. In this article, we’ll dive into the world of HTTP status codes, exploring their meanings and shedding light on common scenarios where developers encounter them.
 

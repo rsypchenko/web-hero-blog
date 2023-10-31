@@ -4,10 +4,10 @@ draft: false
 title: Front-End Interview Questions - Web Security
 description: Exploring 3 frontend interview questions about web security
 date: 2023-10-21
-image: '/images/js2.png'
+image: '/images/js2.webp'
 ---
 
-![Blogster](/images/js2.png)
+![Blogster](/images/js2.webp)
 
 Let us explore some of the popular interview questions related to web security. This is a list of frequently asked questions that I encountered during my interviews.
 

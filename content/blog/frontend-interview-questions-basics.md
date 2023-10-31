@@ -4,10 +4,10 @@ draft: false
 title: Front-End Interview Questions - JavaScript Basics
 description: Exploring common javascript interview questions
 date: 2023-10-28
-image: '/images/js1.png'
+image: '/images/js1.webp'
 ---
 
-![Blogster](/images/js1.png)
+![Blogster](/images/js1.webp)
 
 Of all the crucial aspects of an interview, knowing the commonly asked questions can significantly increase your chances of success. Allow me to share my expertise and provide you with a list of such questions.
 
