@@ -98,6 +98,14 @@ export const config: Config = {
       },
       selfClosing: true,
     },
+    sandbox: {
+      render: "SandBoxEmbed",
+      attributes: {
+        url: { type: String, required: true },
+        title: { type: String, required: false },
+      },
+      selfClosing: true,
+    },
   },
   nodes: {
     heading: {
