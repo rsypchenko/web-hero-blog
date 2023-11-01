@@ -4,6 +4,7 @@ import { blog } from "../lib/markdoc/frontmatter.schema";
 import PageLayout from "../layouts/PageLayout.astro";
 import PageMeta from "../components/PageMeta.astro";
 import { SITE_TITLE } from "../config";
+import Pagination from "src/components/Pagination.astro";
 
 const posts = await readAll({
   directory: "blog",
@@ -17,6 +18,9 @@ const sortedPosts = posts
       new Date(b.frontmatter.date).valueOf() -
       new Date(a.frontmatter.date).valueOf()
   );
+
+const pagesCount = sortedPosts.length / 5;
+const pages = Array.from({ length: pagesCount }, (_, i) => i + 1);
 ---
 
 <PageLayout>
@@ -86,5 +90,7 @@ const sortedPosts = posts
         })
       }
     </ul>
+    <Pagination pages={pages} />
   </section>
+
 </PageLayout>
