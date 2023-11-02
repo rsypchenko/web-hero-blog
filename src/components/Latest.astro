@@ -20,18 +20,11 @@ const sortedPosts = posts
 <section class="mb-8">
   <p class="text-2xl pb-4 text-center">Check The Latest Posts</p>
 
-  <div class="flex justify-between">
+  <div class="grid flex-col text-center justify-items-center sm:grid-cols-3 sm:justify-between">
     {
       sortedPosts.map((post) => {
-        const formattedDate = new Date(
-          post.frontmatter.date
-        ).toLocaleDateString("en-us", {
-          year: "numeric",
-          month: "short",
-          day: "numeric",
-        });
         return (
-          <div class="w-48 flex flex-col cursor-pointer shadow-xl">
+          <div class="w-48 flex-col cursor-pointer shadow-xl">
             <a href={`/blog/${post.slug}`}>
               <div class="w-48">
                 <img src={post.frontmatter.image} loading="lazy" alt="image" class="w-full" />

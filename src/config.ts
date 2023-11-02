@@ -3,7 +3,7 @@
 
 export const SITE_TITLE = "Web Hero";
 export const SITE_DESCRIPTION =
-  "Welcome to my blog! I write about modern web development.";
+  "Welcome to Web Hero Blog! I write about modern web development. Interview questions, tutorials, and more.";
 export const TWITTER_HANDLE = "@yourtwitterhandle";
 export const MY_NAME = "Web Hero";
 
