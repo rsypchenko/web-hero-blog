@@ -18,9 +18,6 @@ const sortedPosts = posts
       new Date(b.frontmatter.date).valueOf() -
       new Date(a.frontmatter.date).valueOf()
   );
-
-const pagesCount = sortedPosts.length / 5;
-const pages = Array.from({ length: pagesCount }, (_, i) => i + 1);
 ---
 
 <PageLayout>
@@ -37,7 +34,7 @@ const pages = Array.from({ length: pagesCount }, (_, i) => i + 1);
             day: "numeric",
           });
           return (
-            <li class="flex cursor-pointer shadow-lg">
+            <li class="flex cursor-pointer shadow-lg h-30 mb-4">
               <a href={`/blog/${post.slug}`}>
                 <div class="w-48">
                   <img
