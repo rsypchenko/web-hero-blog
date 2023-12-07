@@ -1,7 +1,7 @@
 ---
 external: false
 draft: false
-title: Powering Your React Application with Apollo Client
+title: Comparing Next.js, Astro, and Remix - Navigating the Front-end Framework Landscape
 description: Delve into the core strengths, unique offerings, and potential challenges of Next.js, Astro, and Remix, to decide which to use for your next project.
 date: 2023-09-01
 image: '/images/next.webp'

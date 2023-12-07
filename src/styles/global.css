@@ -88,6 +88,8 @@
         font-size: 1.125em;
         line-height: 1.85;
         scroll-behavior: smooth;
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
     }
 
     h1,
@@ -97,6 +99,10 @@
     h5,
     h6 {
         font-family: theme('fontFamily.heading');
+    }
+
+    :root::-webkit-scrollbar {
+        display: none;
     }
 }
 
