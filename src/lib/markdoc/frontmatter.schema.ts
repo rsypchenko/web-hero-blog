@@ -16,6 +16,10 @@ const baseSchema = z.object({
     required_error: "Required frontmatter missing: image",
     invalid_type_error: "image must be a string",
   }),
+  thumb: z.string({
+    required_error: "Required frontmatter missing: thumbnail",
+    invalid_type_error: "thumbnail must be a string",
+  }),
 });
 
 /*

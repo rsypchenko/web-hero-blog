@@ -5,6 +5,7 @@ title: "Basic markdown style guide"
 description: "You can author content using the familiar markdown syntax you already know. All basic markdown syntax is supported."
 date: 2022-11-02
 image: '/images/js1.webp'
+thumb: '/images/thumbs/10.png'
 ---
 
 Markdown is powered by [Markdoc](https://markdoc.dev/). This is an example post to demonstrate all the basic markdown syntax. You can author content using the familiar markdown syntax you already know.

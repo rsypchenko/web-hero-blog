@@ -5,6 +5,7 @@ title: Front-End Interview Questions - Web Security
 description: Exploring 3 frontend interview questions about web security
 date: 2023-10-21
 image: '/images/js2.webp'
+thumb: '/images/thumbs/10.png'
 ---
 
 ![Blogster](/images/js2.webp)

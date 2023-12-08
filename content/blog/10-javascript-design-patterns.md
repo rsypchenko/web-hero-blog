@@ -5,6 +5,7 @@ title: 10 JavaScript Design Patterns
 description: Understanding design patterns with examples - Abstract Factory, Builder, Factory Method, Adapter, Decorator, Facade, Proxy, Mediator, Observer, and Visitor.
 date: 2023-05-02
 image: '/images/10.webp'
+thumb: '/images/thumbs/10.png'
 ---
 
 ![Blogster](/images/10.webp)

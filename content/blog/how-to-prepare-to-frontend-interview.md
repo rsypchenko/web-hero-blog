@@ -5,6 +5,7 @@ title: How To Prepare To Frontend Developer Interview
 description: Step-By-Step Guilde
 date: 2023-10-03
 image: '/images/interview.webp'
+thumb: '/images/thumbs/10.png'
 ---
 
 ![Blogster](/images/interview.webp)

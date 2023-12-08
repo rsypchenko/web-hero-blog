@@ -5,6 +5,7 @@ title: End-to-End Testing in React Applications with Cypress
 description: Comprehensive Guide how to test React aplications utilize cypress
 date: 2023-04-29
 image: '/images/cypress.webp'
+thumb: '/images/thumbs/10.png'
 ---
 
 ![Cypress](/images/cypress.webp)

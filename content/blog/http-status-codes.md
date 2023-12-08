@@ -5,6 +5,7 @@ title: HTTP Status Codes - Developer`s Guide
 description: Exploring most popular http status codes
 date: 2023-10-12
 image: '/images/http.webp'
+thumb: '/images/thumbs/10.png'
 ---
 
 ![Blogster](/images/http.webp)

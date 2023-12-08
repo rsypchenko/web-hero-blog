@@ -5,6 +5,7 @@ title: Front-End Interview Questions - JavaScript Basics
 description: Exploring common javascript interview questions
 date: 2023-10-28
 image: '/images/js1.webp'
+thumb: '/images/thumbs/10.png'
 ---
 
 ![Blogster](/images/js1.webp)

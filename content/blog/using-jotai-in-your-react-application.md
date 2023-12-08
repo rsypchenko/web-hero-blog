@@ -5,6 +5,7 @@ title: Using Jotai in Your React Application
 description: Create more maintainable and efficient React applications by mastering Jotai’s core concepts and applying its best practices.
 date: 2023-01-10
 image: '/images/jotai.webp'
+thumb: '/images/thumbs/10.png'
 ---
 
 ![Blogster](/images/jotai.webp)

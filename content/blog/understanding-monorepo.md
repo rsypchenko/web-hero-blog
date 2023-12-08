@@ -5,6 +5,7 @@ title: Understanding Monorepo
 description: ''
 date: 2023-08-10
 image: '/images/monorepo.webp'
+thumb: '/images/thumbs/10.png'
 ---
 
 ![Blogster](/images/monorepo.webp)

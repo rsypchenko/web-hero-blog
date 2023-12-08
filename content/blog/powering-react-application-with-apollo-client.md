@@ -5,6 +5,7 @@ title: Powering Your React Application with Apollo Client
 description: How we can harness the power of Apollo Client within a React application.
 date: 2023-10-01
 image: '/images/apollo.webp'
+thumb: '/images/thumbs/10.png'
 ---
 
 ![Blogster](/images/apollo.webp)
