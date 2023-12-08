@@ -34,13 +34,13 @@ const sortedPosts = posts
             day: "numeric",
           });
           return (
-            <li class="flex cursor-pointer shadow-lg h-30 mb-4 h-26">
+            <li class="flex cursor-pointer shadow-lg h-28 mb-4">
               <a href={`/blog/${post.slug}`}>
-                <div class="w-48">
+                <div class="w-48 h-full">
                   <img
                     src={post.frontmatter.image}
                     alt="image"
-                    class="w-full"
+                    class="w-full h-full"
                     loading="lazy"
                   />
                 </div>
