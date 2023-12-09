@@ -55,6 +55,7 @@ const sortedPosts = posts
               let lazyImage = entry.target;
               lazyImage.src = lazyImage.dataset.src;
               lazyImage.classList.remove("lazy");
+              lazyImage.classList.add("loaded");
               lazyImageObserver.unobserve(lazyImage);
           }
       });

@@ -2,17 +2,17 @@
 const { post, date } = Astro.props;
 ---
 
-<li class="flex cursor-pointer shadow-lg h-28 mb-4">
+<li class="flex flex-col sm:flex-row cursor-pointer sm:h-28 mb-4">
   <a href={`/blog/${post.slug}`}>
-    <div class="w-48 h-full">
+    <div class="w-full h-48 sm:h-full sm:w-48 image-placeholder">
       <img
-        src={'/public/images/load.svg'}
+        src={'/public/images/placeholder.png'}
         data-src={post.frontmatter.image}
         alt="image"
         class="w-full h-full object-cover object-center lazy-loaded-image lazy"
       />
     </div>
-    <div class="flex flex-col p-2 justify-items-stretch">
+    <div class="flex flex-col justify-items-stretch sm:pl-2">
       <div class="title flex-1">
         {
           post.frontmatter.external ? (
