@@ -1,0 +1,21 @@
+---
+import PageMeta from "../components/PageMeta.astro";
+import PageLayout from "../layouts/PageLayout.astro";
+import { SITE_TITLE } from "../config";
+import { Image } from "astro:assets";
+
+import errorImage from "../assets/images/404.webp";
+---
+
+<PageLayout>
+  <PageMeta title={`${SITE_TITLE}`} slot="meta" />
+  <Fragment slot="main">
+    <div class="flex flex-col text-center h-full mt-20">
+      <Image src={errorImage} alt="404" class="mx-auto" />
+      <h1 class="text-6xl">Oops,</h1>
+      <p class="text-xl">
+        The page you are trying to access cannot be found at the moment.
+      </p>
+    </div>
+  </Fragment>
+</PageLayout>
