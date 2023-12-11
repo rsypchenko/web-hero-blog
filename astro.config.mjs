@@ -2,7 +2,7 @@
 import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
-import robotsTxt from 'astro-robots-txt';
+import robotsTxt from "astro-robots-txt";
 
 /* 
   We are doing some URL mumbo jumbo here to tell Astro what the URL of your website will be.
@@ -31,12 +31,22 @@ if (isBuild) {
 // https://astro.build/config
 export default defineConfig({
   server: {
-    port: SERVER_PORT
+    port: SERVER_PORT,
   },
   site: BASE_URL,
-  integrations: [sitemap(), robotsTxt(), tailwind({
-    config: {
-      applyBaseStyles: false
-    }
-  })]
+  integrations: [
+    sitemap({
+      serialize(item) {
+        item.url = item.url.slice(0, item.url.length - 1);
+
+        return item;
+      },
+    }),
+    robotsTxt(),
+    tailwind({
+      config: {
+        applyBaseStyles: false,
+      },
+    }),
+  ],
 });
