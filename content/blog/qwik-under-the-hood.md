@@ -1,8 +1,8 @@
 ---
 external: false
 draft: false
-title: Qwik Under the Hood - Understanding Its Reactive State Management
-description: Dive deep into the reactive state management of Qwik with our in-depth article. Understand how Qwik optimizes web applications with its unique reactivity model, offering code examples and insights into its efficient DOM updates for superior performance.
+title: Qwik Under the Hood
+description: Dive deep into the reactive state management of Qwik with our in-depth article
 date: 2023-11-09
 image: '/images/qwik.webp'
 thumb: '/images/thumbs/10.png'

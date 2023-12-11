@@ -2,7 +2,7 @@
 external: false
 draft: false
 title: Understanding Monorepo
-description: ''
+description: Explore the World of Monorepos. A Comprehensive Guide for Web Developers
 date: 2023-08-10
 image: '/images/monorepo.webp'
 thumb: '/images/thumbs/10.png'

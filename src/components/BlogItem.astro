@@ -41,6 +41,9 @@ const { post, date } = Astro.props;
             >
               {post.frontmatter.title}
             </a>
+            <p class="text-sm font-thin dark:text-gray-500">
+              {post.frontmatter.description}  
+            </p>
           )
         }
       </div>

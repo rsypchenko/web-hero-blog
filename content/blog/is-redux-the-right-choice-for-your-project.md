@@ -2,7 +2,7 @@
 external: false
 draft: false
 title: Is Redux the Right Choice for Your Project?
-description: Explore the pros and cons of using Redux for state management in your web development projects. This article delves into the scenarios where Redux shines, its complexities, and alternatives to help you decide if Redux is the right choice for your application's architecture.
+description: Explore the pros and cons of using Redux for state management in your web development projects.
 date: 2023-11-08
 image: '/images/is-redux.webp'
 thumb: '/images/thumbs/10.png'
