@@ -36,6 +36,9 @@ export default defineConfig({
   site: BASE_URL,
   integrations: [
     sitemap({
+      changefreq: "daily",
+      priority: 0.7,
+      lastmod: new Date(),
       serialize(item) {
         item.url = item.url.slice(0, item.url.length - 1);
 
