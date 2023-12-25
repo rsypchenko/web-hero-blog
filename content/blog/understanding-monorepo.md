@@ -6,6 +6,8 @@ description: Explore the World of Monorepos. A Comprehensive Guide for Web Devel
 date: 2023-08-10
 image: '/images/monorepo.webp'
 thumb: '/images/thumbs/10.png'
+tags: ['monorepo']
+popular: false
 ---
 
 ![Blogster](/images/monorepo.webp)
@@ -17,6 +19,7 @@ There are many great monorepo tools, built by great teams, with different philos
 The tools we’ll focus on are: Bazel (by Google), Gradle Build Tool (by Gradle, Inc), Lage (by Microsoft), Lerna, Nx (by Nrwl), Pants (by the Pants Build community), Rush (by Microsoft), and Turborepo (by Vercel). We chose these tools because of their usage or recognition in the Web development community.
 
 ### What is a Monorepo?
+
 A monorepo is a single repository containing multiple distinct projects with well-defined relationships.
 
 ![Blogster](/images/monorepo2.webp)
@@ -33,6 +36,7 @@ In fact, such a repo is prohibitively monolithic, which is often the first thing
 A good monorepo is the opposite of monolithic! Read more about this and other misconceptions in the article “Misconceptions about Monorepos: Monorepo != Monolith”.
 
 #### But why?
+
 Let’s go deeper into the rabbit hole.
 
 — No overhead to create new projects
@@ -48,11 +52,13 @@ No need to worry about incompatibilities because of projects depending on confli
 Get a consistent way of building and testing applications written using different tools and technologies. Developers can confidently contribute to other teams’ applications and verify that their changes are safe.
 
 #### What monorepo tools should provide?
+
 Monorepos have a lot of advantages, but to make them work, you need to have the right tools. As your workspace grows, the tools have to help you keep it fast, understandable, and manageable.
 
 ![Blogster](/images/monorepo4.webp)
 
 #### It’s not just about the features.
+
 Features matter! Things like support for distributed task execution can be a game changer, especially in large monorepos. But there are other extremely important things such as dev ergonomics, maturity, documentation, editor support, etc. We don’t cover them here because they are more subjective.
 
 You may find, say, Lage more enjoyable to use than Nx or Bazel even though in some ways it is less capable.
@@ -61,6 +67,7 @@ Some features are easy to add even when a given tool doesn’t support it (e.g.,
 
 
 #### Many solutions for different goals
+
 Each tool fits a specific set of needs and gives you precise features.
 Depending on your needs and constraints, we’ll help you decide which tools best suit you.
 
@@ -92,6 +99,7 @@ Depending on your needs and constraints, we’ll help you decide which tools bes
 
 
 ### Resources
+
 Here is a curated list of useful videos and podcasts to go deeper or see the information in another way.
 
 - [SyntaxFM #426: Monorepos! Workspaces, pnpm, turborepo + more!](https://syntax.fm/show/426/monorepos-workspaces-pnpm-turborepo-more?utm_source=monorepo.tools)
@@ -105,6 +113,7 @@ Here is a curated list of useful videos and podcasts to go deeper or see the inf
 - [Pants Podcasts](https://www.pantsbuild.org/docs/media#podcasts&utm_source=monorepo.tools)
 
 ### Monorepo articles
+
 Here is a curated list of articles about monorepos that will greatly support what you just learned.
 
 - [The One Version Rule — opensource.google](https://opensource.google/docs/thirdparty/oneversion?utm_source=monorepo.tools)
@@ -114,8 +123,8 @@ Here is a curated list of articles about monorepos that will greatly support wha
 - [Nx monorepo documentation](https://nx.dev/guides/why-monorepos#monorepos?utm_source=monorepo.tools)
 - [Pants Articles](https://www.pantsbuild.org/docs/media#posts--articles?utm_source=monorepo.tools)
 
-
 ### Conclusion
+
 In conclusion, monorepos stand as a remarkable innovation in the software development landscape, offering a multitude of advantages including ease of creating new projects, atomic commits, uniform versions, and heightened developer mobility. It’s crucial to dispel the misconception of a monorepo being equivalent to a monolith, as the essence of a well-crafted monorepo lies in its exact opposition to monolithic structures.
 
 The choice of the right tool, be it Bazel, Gradle, Lage, Lerna, Nx, Pants, Rush, or Turborepo, should be guided by the specific needs and goals of your project. Each tool is equipped with a unique set of capabilities to support the management of monorepos, making the environment efficient and manageable.

@@ -6,6 +6,8 @@ description: Exploring new JavaScript features 2023
 date: 2023-12-10
 image: '/images/js2023.webp'
 thumb: '/images/thumbs/10.png'
+tags: ['javascript']
+popular: false
 ---
 
 ![JavaScript](/images/js2023.webp)
@@ -112,6 +114,7 @@ We can style the backdrop of the dialog by using the `::backdrop` pseudo-element
 ```
 
 ### The generic search element
+
 The `<search>` HTML element is a container representing the parts of the document or application with form controls or other content related to performing a search or filtering operation. The `<search>` element semantically identifies the purpose of the element's contents as having search or filtering capabilities. The search or filtering functionality can be for the website or application, the current web page or document, or the entire Internet or subsection thereof.
 
 ```html
@@ -153,6 +156,7 @@ console.log(found);
 ```
 
 ### .with()
+
 The with() method of Array instances is the copying version of using the bracket notation to change the value of a given index. It returns a new array with the element at the given index replaced with the given value.
 
 Creating a new array with a single changed element

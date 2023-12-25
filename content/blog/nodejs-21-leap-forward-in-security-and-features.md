@@ -6,6 +6,8 @@ description: Exploring Nodejs 21 updates and security improvements
 date: 2023-11-18
 image: '/images/nodejs-21.webp'
 thumb: '/images/thumbs/10.png'
+tags: ['nodejs', 'javascript']
+popular: false
 ---
 
 ![NodeJS](/images/nodejs-21.webp)

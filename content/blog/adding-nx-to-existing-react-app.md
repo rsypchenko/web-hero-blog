@@ -6,6 +6,8 @@ description: NX integration to existing React app - Step-By-Step guide
 date: 2023-12-14
 image: '/images/nx-react.webp'
 thumb: '/images/thumbs/10.png'
+tags: ['react', 'monorepo', 'nx']
+popular: false
 ---
 
 ![NX](/images/nx-react.webp)

@@ -6,6 +6,8 @@ description: Which Language Is Better Suited For What Use Cases?
 date: 2023-12-21
 image: '/images/rust-vs-go.webp'
 thumb: '/images/thumbs/10.png'
+tags: ['rust', 'go']
+popular: false
 ---
 
 ![Rust-vs-Go](/images/rust-vs-go.webp)

@@ -6,6 +6,8 @@ description: Understanding and Implementing S.O.L.I.D Principles in React Applic
 date: 2023-04-24
 image: '/images/react-solid.webp'
 thumb: '/images/thumbs/10.png'
+tags: ['react', 'system design']
+popular: false
 ---
 
 ![React](/images/react-solid.webp)

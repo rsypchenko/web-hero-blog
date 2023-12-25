@@ -6,6 +6,8 @@ description: Things you wish you learned about JavaScript in 2024
 date: 2023-11-14
 image: '/images/js-2024.webp'
 thumb: '/images/thumbs/10.png'
+tags: ['javascript']
+popular: false
 ---
 
 ![React](/images/js-2024.webp)

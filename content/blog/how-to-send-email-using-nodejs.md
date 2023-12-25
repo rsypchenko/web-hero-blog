@@ -6,6 +6,8 @@ description: How to send email using node.js step-by-step guide
 date: 2023-11-19
 image: '/images/nodejs-email.webp'
 thumb: '/images/thumbs/10.png'
+tags: ['nodejs']
+popular: false
 ---
 
 ![React](/images/nodejs-email.webp)

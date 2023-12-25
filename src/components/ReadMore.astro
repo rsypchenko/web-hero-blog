@@ -1,0 +1,38 @@
+---
+import { readAll } from "../lib/markdoc/read";
+import { blog } from "../lib/markdoc/frontmatter.schema";
+import Card from "./Card.astro";
+
+const { tags } = Astro.props;
+
+const tagsMap = tags.reduce((acc, next) => {
+  return {
+    ...acc,
+    [next]: true,
+  };
+}, {});
+
+const posts = await readAll({
+  directory: "blog",
+  frontmatterSchema: blog,
+});
+
+const sortedPosts = posts
+  .filter((p) => {
+    return p.frontmatter.draft === false && p.frontmatter.tags.some((tag) => tagsMap[tag]);
+  })
+  .slice(0, 4);
+--- 
+
+<section class="mt-12 border-t-2">
+  <p class="text-2xl text-center">Read More</p>
+  <div
+    class="grid flex-col justify-items-center sm:grid-cols-2 gap-2 sm:justify-between"
+  >
+    {
+      sortedPosts.map((post) => {
+        return <Card post={post} />;
+      })
+    }
+  </div>
+</section>

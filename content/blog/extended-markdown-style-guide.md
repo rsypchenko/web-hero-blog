@@ -6,6 +6,8 @@ description: "In addition to supporting all basic Markdoc syntax, this template 
 date: 2022-11-01
 image: '/images/js1.webp'
 thumb: '/images/thumbs/10.png'
+tags: ['', '']
+popular: false
 ---
 
 This blog's markdown is powered by [Markdoc](https://markdoc.dev/). In addition to supporting all basic markdown syntax, this blog also supports extended syntax to render custom components that are not conventionally available via basic markdown. This post is an example to showcase all available extended markdown syntax.

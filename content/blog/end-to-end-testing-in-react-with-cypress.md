@@ -6,6 +6,8 @@ description: Step-By-Step guilde about end-to-end testing for react application 
 date: 2023-04-24
 image: '/images/react-cypress.webp'
 thumb: '/images/thumbs/10.png'
+tags: ['react', 'testing', 'cypress']
+popular: false
 ---
 
 ![React](/images/react-cypress.webp)

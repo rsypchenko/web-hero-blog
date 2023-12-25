@@ -6,6 +6,8 @@ description: Step-By-Step Guilde for developers. Exploring the best resources fo
 date: 2023-10-03
 image: '/images/interview.webp'
 thumb: '/images/thumbs/10.png'
+tags: ['interview', 'javascript']
+popular: true
 ---
 
 ![Interview](/images/interview.webp)

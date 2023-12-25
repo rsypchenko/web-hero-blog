@@ -6,6 +6,8 @@ description: Exploring common javascript interview questions
 date: 2023-10-28
 image: '/images/js1.webp'
 thumb: '/images/thumbs/10.png'
+tags: ['interview', 'javascript']
+popular: false
 ---
 
 ![Blogster](/images/js1.webp)
@@ -42,6 +44,7 @@ person.sayName(); // Output: "My name is John"
 This will output “My name is John”, because the “sayName” method is defined on the “personPrototype” object, which is the prototype of the “person” object.
 
 ### 2. Explain macrotask and microtask
+
 macrotask — task from task queue in event loop, setTimeout, setInterval, requestAnimationFrame, Web APIs move callbacks into the task queue, where they wait for the call stack to be empty before executing
 
 **microtask** — task from microtask queue in event loop; Promises, process.nextTick, queueMicrotask, MutationObserver; used for callback functions passed to promise.then(), promise.catch() and promise.finally(), microtasks can be manually queued using queueMicrotask() function; microtasks have higher priority than standard macrotasks since the entire microtask queue must be empty before the browser will move on to a macrotask
@@ -51,6 +54,7 @@ JS engine consists of mostly of two primary components: *heap — used for memor
 Event loop process: 1) Remove one task from the macro task queue 2) Execute code until the call stack is empty 3) execute microtask one at a time until the microtask queue is empty 4) render any changes to the DOM 5) go to step one.
 
 ### 3. What does Object.freeze() do?
+
 Object.freeze() is a JavaScript method that is used to freeze an object, making it immutable. When you freeze an object, it prevents any changes to the object’s properties, including adding, modifying, or deleting properties.
 
 This can be useful in situations where you want to ensure that an object’s state remains constant and cannot be accidentally or maliciously altered.

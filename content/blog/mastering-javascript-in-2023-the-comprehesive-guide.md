@@ -6,6 +6,8 @@ description: Explore the Evolution, Features, and Future Trends in JavaScript De
 date: 2023-11-13
 image: '/images/javascript-evolution.webp'
 thumb: '/images/thumbs/10.png'
+tags: ['javascript']
+popular: false
 ---
 
 ![JavaScript](/images/javascript-evolution.webp)

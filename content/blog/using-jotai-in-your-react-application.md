@@ -6,6 +6,8 @@ description: Create more maintainable and efficient React applications by master
 date: 2023-01-10
 image: '/images/jotai.webp'
 thumb: '/images/thumbs/10.png'
+tags: ['react', 'jotai']
+popular: true
 ---
 
 ![Blogster](/images/jotai.webp)

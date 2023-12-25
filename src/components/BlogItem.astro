@@ -2,11 +2,11 @@
 const { post, date } = Astro.props;
 ---
 
-<li class="flex flex-col sm:flex-row cursor-pointer sm:h-28 mb-4">
+<li class="flex flex-col sm:flex-row cursor-pointer mb-4">
   <a href={`/blog/${post.slug}`}>
-    <div class="w-full h-48 sm:h-full sm:w-48 image-placeholder">
+    <div class="w-full h-48 sm:h-full sm:w-64 image-placeholder">
       <img
-        src={'/public/images/placeholder.png'}
+        src={"/public/images/placeholder.png"}
         data-src={post.frontmatter.image}
         alt="image"
         class="w-full h-full object-cover object-center lazy-loaded-image lazy"
@@ -31,26 +31,39 @@ const { post, date } = Astro.props;
               </span>
             </a>
           ) : (
-            <a
-              href={`/blog/${post.slug}`}
-              class="unset
+            <>
+              <a
+                href={`/blog/${post.slug}`}
+                class="unset
               transition-[background-size] duration-300 
               bg-gradient-to-r bg-left-bottom bg-no-repeat
               bg-[length:0%_55%] hover:bg-[length:100%_55%] dark:bg-[length:0%_2px] hover:dark:bg-[length:100%_2px]
               from-primary-blue to-primary-blue dark:from-primary-blue dark:to-primary-blue"
-            >
-              {post.frontmatter.title}
-            </a>
-            <p class="text-sm font-thin dark:text-gray-500">
-              {post.frontmatter.description}  
-            </p>
+              >
+                {post.frontmatter.title}
+              </a>
+              <p class="text-sm font-thin dark:text-gray-500 mt-2">
+                {post.frontmatter.description}
+              </p>
+            </>
           )
         }
       </div>
-      <div class="text-text-muted text-sm italic justify-self-end">
+      <!-- <div class="text-text-muted text-sm italic justify-self-end">
         <time datetime={post.frontmatter.date.toISOString()}>
           {date}
         </time>
+      </div> -->
+      <div class="flex mt-4">
+        {
+          post.frontmatter.tags.map((tag) => {
+            return (
+              <span class="text-xs text-gray-500 dark:text-gray-400 mr-1 pl-4 pr-4 pt-2 pb-2 dark:bg-slate-800 bg-slate-100 rounded-sm">
+                {tag}
+              </span>
+            );
+          })
+        }
       </div>
     </div>
   </a>

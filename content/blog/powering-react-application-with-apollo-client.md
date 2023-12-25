@@ -6,6 +6,8 @@ description: How we can harness the power of Apollo Client within a React applic
 date: 2023-10-01
 image: '/images/apollo.webp'
 thumb: '/images/thumbs/10.png'
+tags: ['react', 'state management', 'apollo']
+popular: false
 ---
 
 ![Blogster](/images/apollo.webp)
@@ -13,16 +15,18 @@ thumb: '/images/thumbs/10.png'
 Building React applications that interact with GraphQL APIs can significantly simplify with Apollo Client. This feature-rich library enables effortless GraphQL query management, ensures automatic UI updates, and comes packed with handy tools. Let’s delve deeper into how we can harness the power of Apollo Client within a React application.
 
 ### Kickstarting with Apollo Client
+
 Apollo Client is crafted to seamlessly handle GraphQL operations (queries, mutations, and subscriptions) while updating the user interface in response to GraphQL server interactions. It’s stacked with useful features like caching, optimistic UI, error management, and pagination and server-side rendering (SSR) support.
 
 First things first, let’s install the necessary packages. Execute the following command in your terminal:
 
 
-```
+```bash
 npm install @apollo/client graphql
 ```
 
 ### Integrating Apollo Client in a React Application
+
 To integrate Apollo Client in your React app, you’ll need to instantiate ApolloClient and encompass your React app with the ApolloProvider component. This makes the client instance accessible across your component tree.
 
 ```js
@@ -49,6 +53,7 @@ export default App;
 
 
 ### Making Queries with the useQuery Hook
+
 Apollo Client provides a useQuery hook, a handy tool for executing GraphQL queries within your components. This hook updates your user interface automatically with the data received.
 
 Let’s consider a case where we need to fetch all articles. Here’s how you can use the *useQuery* hook:
@@ -91,6 +96,7 @@ export default ArticleList;
 ```
 
 ### Updating Data with useMutation Hook
+
 For updating data on your server, Apollo Client offers the useMutation hook. This hook returns a mutation function that you can call to perform the mutation.
 
 Let’s say we want to add an article:
@@ -138,6 +144,7 @@ export default AddArticle;
 ```
 
 ### Deleting Data with useMutation Hook
+
 Just like creating or updating data, Apollo Client uses the useMutation hook for deleting data as well. This hook returns a mutation function that executes the mutation when called.
 
 Let’s consider a scenario where we want to delete an article. Here’s how you can leverage *useMutation*:
@@ -187,11 +194,12 @@ In this example, *useMutation* returns the *deleteArticle* function, which we ca
 
 This feature showcases the true power of Apollo Client’s automatic cache management, helping to maintain a single source of truth and ensuring that the UI is in sync with the server.
 
-
 ### Re-fetching Data and Polling with Apollo Client
+
 Apollo Client also allows you to control how and when you want to fetch data. Two of the strategies that you might find helpful are re-fetching data and polling.
 
 ### Re-fetching Data
+
 Re-fetching data is useful when you want to manually fetch the latest data from your server. Apollo Client provides a *refetch* function returned from *useQuery* that you can call to fetch the data again.
 
 Here’s an example where you can re-fetch articles:
@@ -231,6 +239,7 @@ In this example, clicking the “Refresh” button will re-fetch the articles fr
 
 
 ### Polling
+
 Polling is another strategy to keep your data up to date. Instead of manually triggering a re-fetch, you can configure your useQuery hook to poll the server at a specific interval.
 
 Here’s how you can poll articles every 5000 milliseconds (5 seconds):
@@ -270,8 +279,7 @@ In this example, Apollo Client will automatically send a GET_ARTICLES query to t
 Using re-fetching and polling, you can ensure your application always displays the most current data from your server.
 
 ### Conclusion
+
 Incorporating Apollo Client with your React application ushers in a new level of interactivity and dynamism. It leverages GraphQL’s power by offering features like intuitive caching, optimistic UI, pagination, and more.
 
 The useQuery and useMutation hooks provide a straightforward way to integrate GraphQL operations into your React components. This guide is a primer for what's possible with Apollo Client and React; many more examples and resources in the Apollo Client documentation can help you develop efficient, feature-rich React applications with GraphQL. Keep exploring.
-
-Happy coding! 🚀

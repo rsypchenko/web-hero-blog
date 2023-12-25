@@ -6,6 +6,8 @@ description: Guide for developers how to improve your code reviews
 date: 2023-12-16
 image: '/images/code-review.webp'
 thumb: '/images/thumbs/10.png'
+tags: ['code review', 'javascript']
+popular: false
 ---
 
 ![Code Review](/images/code-review.webp)

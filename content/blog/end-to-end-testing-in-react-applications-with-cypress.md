@@ -1,11 +1,13 @@
 ---
 external: false
 draft: false
-title: End-to-End Testing in React Applications with Cypress
+title: End-To-End Testing in React Applications with Cypress
 description: Comprehensive Guide how to test React aplications utilize cypress
 date: 2023-04-29
 image: '/images/cypress.webp'
 thumb: '/images/thumbs/10.png'
+tags: ['cypress', 'testing', 'react']
+popular: false
 ---
 
 ![Cypress](/images/cypress.webp)

@@ -6,6 +6,8 @@ description: Exploring career mistakes you should avoid as a software developer
 date: 2023-12-16
 image: '/images/career-mistakes.webp'
 thumb: '/images/thumbs/10.png'
+tags: ['career', 'career advice']
+popular: false
 ---
 
 ![Career](/images/career-mistakes.webp)

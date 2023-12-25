@@ -6,6 +6,8 @@ description: Understanding design patterns with examples - Abstract Factory, Bui
 date: 2023-05-02
 image: '/images/10.webp'
 thumb: '/images/thumbs/10.png'
+tags: ['javascript', 'system design']
+popular: true
 ---
 
 ![Blogster](/images/10.webp)

@@ -6,6 +6,8 @@ description: "You can author content using the familiar markdown syntax you alre
 date: 2022-11-02
 image: '/images/js1.webp'
 thumb: '/images/thumbs/10.png'
+tags: ['', '']
+popular: false
 ---
 
 Markdown is powered by [Markdoc](https://markdoc.dev/). This is an example post to demonstrate all the basic markdown syntax. You can author content using the familiar markdown syntax you already know.

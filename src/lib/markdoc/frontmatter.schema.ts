@@ -20,6 +20,8 @@ const baseSchema = z.object({
     required_error: "Required frontmatter missing: thumbnail",
     invalid_type_error: "thumbnail must be a string",
   }),
+  tags: z.array(z.string()),
+  popular: z.boolean().default(false),
 });
 
 /*

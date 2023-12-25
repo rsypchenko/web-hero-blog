@@ -6,6 +6,8 @@ description: How to share state across your Next.js application
 date: 2023-12-18
 image: '/images/nextjs-jotai.webp'
 thumb: '/images/thumbs/10.png'
+tags: ['next.js', 'jotai', 'state management']
+popular: false
 ---
 
 ![Jotai](/images/nextjs-jotai.webp)

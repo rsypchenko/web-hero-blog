@@ -6,9 +6,11 @@ description: Dive deep into the reactive state management of Qwik with our in-de
 date: 2023-11-09
 image: '/images/qwik.webp'
 thumb: '/images/thumbs/10.png'
+tags: ['javascript', 'qwik']
+popular: false
 ---
 
-![Redux](/images/qwik.webp)
+![Qwik](/images/qwik.webp)
 
 In modern web development, state management is the cornerstone of interactive applications. Qwik, a promising new player in the frontend framework arena, introduces a reactivity model that’s as efficient as it is innovative. This article peels back the layers of Qwik’s reactive state management, offering a glimpse into its inner workings and demonstrating how it can be leveraged to build dynamic user interfaces with unparalleled performance.
 

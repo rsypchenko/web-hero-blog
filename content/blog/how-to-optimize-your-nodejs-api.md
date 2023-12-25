@@ -6,6 +6,8 @@ description: Explore 9 tips and tricks how to improve node.js api performance
 date: 2023-12-18
 image: '/images/nodejs-api.webp'
 thumb: '/images/thumbs/10.png'
+tags: ['node.js', 'javascript']
+popular: false
 ---
 
 ![Node.js API](/images/nodejs-api.webp)

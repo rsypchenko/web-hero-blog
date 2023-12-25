@@ -8,12 +8,14 @@ import GitHubGistEmbed from "./GitHubGistEmbed.astro";
 import CodeBlock from "./CodeBlock.astro";
 import Heading from "./Heading.astro";
 import SandBoxEmbed from "./SandBoxEmbed.astro";
+import ReadMore from "./ReadMore.astro";
 
 type Props = {
   content: Content;
+  tags: any;
 };
 
-const { content } = Astro.props;
+const { content, tags } = Astro.props;
 
 const components = {
   Heading: {
@@ -46,5 +48,8 @@ const components = {
   },
 };
 ---
+<div>
+  <MarkdocRenderer content={content} components={components} />
+  <ReadMore tags={tags} />
+</div>
 
-<MarkdocRenderer content={content} components={components} />

@@ -6,6 +6,8 @@ description: Explore the pros and cons of using Redux for state management in yo
 date: 2023-11-08
 image: '/images/is-redux.webp'
 thumb: '/images/thumbs/10.png'
+tags: ['redux', 'react']
+popular: false
 ---
 
 ![Redux](/images/is-redux.webp)

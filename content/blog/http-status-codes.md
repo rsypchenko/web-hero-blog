@@ -6,6 +6,8 @@ description: Exploring most popular http status codes
 date: 2023-10-12
 image: '/images/http.webp'
 thumb: '/images/thumbs/10.png'
+tags: ['network']
+popular: false
 ---
 
 ![Blogster](/images/http.webp)

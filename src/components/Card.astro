@@ -1,0 +1,65 @@
+---
+const { post } = Astro.props;
+---
+
+<div class="w-full flex-col cursor-pointer shadow-lg rounded-sm">
+  <a href={`/blog/${post.slug}`}>
+    <div class="w-full h-48">
+      <img
+        src={post.frontmatter.image}
+        loading="lazy"
+        alt="image"
+        class=" w-full h-full object-cover"
+      />
+    </div>
+    <div class="flex-col justify-items-stretch p-4">
+      <div class="title">
+        {
+          post.frontmatter.external ? (
+            <a
+              href={post.frontmatter.url}
+              target="_blank"
+              class="unset
+              transition-[background-size] duration-300 
+              bg-gradient-to-r bg-left-bottom bg-no-repeat
+              bg-[length:0%_55%] hover:bg-[length:100%_55%] dark:bg-[length:0%_2px] hover:dark:bg-[length:100%_2px]
+              from-primary-blue to-primary-blue dark:from-primary-blue dark:to-primary-blue
+            "
+            >
+              <span>{post.frontmatter.title}</span>
+              <span>
+                <i class="ml-1 mr-1 text-[12px] pb-2 fa-solid fa-up-right-from-square" />
+              </span>
+            </a>
+          ) : (
+            <a
+              href={`/blog/${post.slug}`}
+              class="unset
+              transition-[background-size] duration-300 
+              bg-gradient-to-r bg-left-bottom bg-no-repeat
+              bg-[length:0%_55%] hover:bg-[length:100%_55%] dark:bg-[length:0%_2px] hover:dark:bg-[length:100%_2px]
+              from-primary-blue to-primary-blue dark:from-primary-blue dark:to-primary-blue
+            "
+            >
+              {post.frontmatter.title}
+            </a>
+          )
+        }
+      </div>
+      <p class="text-sm font-thin dark:text-gray-600 text-gray-500">
+        {post.frontmatter.description}
+      </p>
+      <div class="flex mt-4 self-end flex-wrap">
+        {
+          post.frontmatter.tags.map((tag) => {
+            return (
+              <span class="text-xs text-gray-500 dark:text-gray-400 mr-1 mb-2 pl-4 pr-4 pt-2 pb-2 dark:bg-slate-800 bg-slate-100 rounded-sm">
+                {tag}
+              </span>
+            );
+          })
+        }
+      </div>
+    </div>
+  </a>
+</div>

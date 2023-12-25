@@ -6,6 +6,8 @@ description: Master Functional Programming in JavaScript
 date: 2023-12-03
 image: '/images/functional-programming.webp'
 thumb: '/images/thumbs/10.png'
+tags: ['javascript', 'functional programming']
+popular: false
 ---
 
 ![Functional Programming](/images/functional-programming.webp)

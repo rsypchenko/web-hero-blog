@@ -6,6 +6,8 @@ description: Explore optimization for frontend application like Mastering Memoiz
 date: 2023-11-14
 image: '/images/frontend-optimization.webp'
 thumb: '/images/thumbs/10.png'
+tags: ['javascript', 'performance']
+popular: false
 ---
 
 ![Frontend](/images/frontend-optimization.webp)

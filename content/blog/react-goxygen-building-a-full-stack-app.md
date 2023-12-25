@@ -6,6 +6,8 @@ description: How to create full-stack application using react and goxygen
 date: 2023-12-21
 image: '/images/react-goxygen.webp'
 thumb: '/images/thumbs/10.png'
+tags: ['react', 'go']
+popular: false
 ---
 
 ![React and Goxygen](/images/react-goxygen.webp)

@@ -6,6 +6,8 @@ description: Explore sites that can help to build your perfect resume
 date: 2023-11-18
 image: '/images/6-sites.webp'
 thumb: '/images/thumbs/10.png'
+tags: ['interview',  'career advice']
+popular: false
 ---
 
 ![Resume](/images/6-sites.webp)

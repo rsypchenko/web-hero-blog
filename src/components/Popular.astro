@@ -1,12 +1,7 @@
 ---
 import { readAll } from "../lib/markdoc/read";
 import { blog } from "../lib/markdoc/frontmatter.schema";
-
-const popular: any = {
-  '10-javascript-design-patterns': true,
-  'using-jotai-in-your-react-application': true,
-  'how-to-prepare-to-frontend-interview': true,
-}
+import Card from "./Card.astro";
 
 const posts = await readAll({
   directory: "blog",
@@ -14,64 +9,20 @@ const posts = await readAll({
 });
 
 const sortedPosts = posts
-  .filter((p) => p.frontmatter.draft !== true && popular[p.slug])
-  .slice(0, 6);
+  .filter((p) => p.frontmatter.draft !== true && p.frontmatter.popular === true)
+  .slice(0, 4);
 ---
 
 <section class="mb-8">
   <p class="text-2xl pb-4 text-center">Most Popular Posts</p>
 
   <div
-    class="grid flex-col justify-items-center sm:grid-cols-3 gap-2 sm:justify-between"
+    class="grid flex-col justify-items-center sm:grid-cols-2 gap-3 sm:justify-between"
   >
     {
       sortedPosts.map((post) => {
         return (
-          <div class="w-full flex-col cursor-pointer shadow-lg">
-            <a href={`/blog/${post.slug}`}>
-              <div class="w-full h-32 relative">
-                <img
-                  src={post.frontmatter.image}
-                  loading="lazy"
-                  alt="image"
-                  class="absolute w-full h-full object-cover"
-                />
-              </div>
-              <div class="flex p-2">
-                <div class="title">
-                  {post.frontmatter.external ? (
-                    <a
-                      href={post.frontmatter.url}
-                      target="_blank"
-                      class="unset
-                      transition-[background-size] duration-300 
-                      bg-gradient-to-r bg-left-bottom bg-no-repeat
-                      bg-[length:0%_55%] hover:bg-[length:100%_55%] dark:bg-[length:0%_2px] hover:dark:bg-[length:100%_2px]
-                      from-primary-blue to-primary-blue dark:from-primary-blue dark:to-primary-blue
-                    "
-                    >
-                      <span>{post.frontmatter.title}</span>
-                      <span>
-                        <i class="ml-1 mr-1 text-[12px] pb-2 fa-solid fa-up-right-from-square" />
-                      </span>
-                    </a>
-                  ) : (
-                    <a
-                      href={`/blog/${post.slug}`}
-                      class="unset
-                      transition-[background-size] duration-300 
-                      bg-gradient-to-r bg-left-bottom bg-no-repeat
-                      bg-[length:0%_55%] hover:bg-[length:100%_55%] dark:bg-[length:0%_2px] hover:dark:bg-[length:100%_2px]
-                      from-primary-blue to-primary-blue dark:from-primary-blue dark:to-primary-blue
-                    "
-                    >
-                      {post.frontmatter.title}
-                    </a>
-                  )}
-                </div>
-              </div>
-            </a>
-          </div>
+          <Card post={post} />
         );
       })
     }

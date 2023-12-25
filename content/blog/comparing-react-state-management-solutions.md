@@ -6,6 +6,8 @@ description: Exploring React state managements solutions like React Context API,
 date: 2023-04-25
 image: '/images/react-state.webp'
 thumb: '/images/thumbs/10.png'
+tags: ['react', 'redux', 'state management']
+popular: false
 ---
 
 ![React](/images/react-state.webp)

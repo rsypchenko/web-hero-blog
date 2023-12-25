@@ -6,6 +6,8 @@ description: Framer Motion is a popular animation library for React that makes i
 date: 2023-04-22
 image: '/images/react-motion.webp'
 thumb: '/images/thumbs/10.png'
+tags: ['react', 'animation']
+popular: true
 ---
 
 ![Motion](/images/react-motion.webp)

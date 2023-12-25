@@ -6,6 +6,8 @@ description: Explore common techniques for conditional rendering in react applic
 date: 2023-12-18
 image: '/images/react-conditional.webp'
 thumb: '/images/thumbs/10.png'
+tags: ['react', 'performance']
+popular: false
 ---
 
 ![React.js](/images/react-conditional.webp)
