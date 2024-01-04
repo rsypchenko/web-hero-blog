@@ -2,7 +2,7 @@
 const { post } = Astro.props;
 ---
 
-<div class="w-full flex-col cursor-pointer shadow-lg rounded-sm">
+<div class="w-full flex-col cursor-pointer hover:shadow-xl dark:shadow-slate-800 transition-shadow duration-500">
   <a href={`/blog/${post.slug}`}>
     <div class="w-full h-48">
       <img
@@ -12,8 +12,8 @@ const { post } = Astro.props;
         class=" w-full h-full object-cover"
       />
     </div>
-    <div class="flex-col justify-items-stretch p-4">
-      <div class="title">
+    <div class="flex-col p-2 min-h-56">
+      <div class="flex title">
         {
           post.frontmatter.external ? (
             <a
@@ -46,10 +46,10 @@ const { post } = Astro.props;
           )
         }
       </div>
-      <p class="text-sm font-thin dark:text-gray-600 text-gray-500">
+      <p class="flex flex-1 text-sm font-thin dark:text-gray-600 text-gray-500 mt-2">
         {post.frontmatter.description}
       </p>
-      <div class="flex mt-4 self-end flex-wrap">
+      <div class="flex mt-4 flex-wrap">
         {
           post.frontmatter.tags.map((tag) => {
             return (
