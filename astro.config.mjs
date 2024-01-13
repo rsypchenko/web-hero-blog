@@ -39,6 +39,20 @@ export default defineConfig({
       serialize(item) {
         item.url = item.url.slice(0, item.url.length - 1);
 
+        if (item.url === BASE_URL) {
+          item.priority = 1;
+          item.changefreq = "daily";
+          item.lastmod = new Date().toISOString();
+        } else if (item.url === BASE_URL + "/blog") {
+          item.priority = 1;
+          item.changefreq = "daily";
+          item.lastmod = new Date().toISOString();
+        } else {
+          item.priority = 0.8;
+          item.changefreq = "daily";
+          item.lastmod = new Date().toISOString();
+        }
+
         return item;
       },
     }),
