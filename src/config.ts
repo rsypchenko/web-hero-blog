@@ -3,7 +3,7 @@
 
 export const SITE_TITLE = "Web Hero";
 export const SITE_DESCRIPTION =
-  "Welcome to Web Hero Blog! I write about modern web development. Interview questions, tutorials, and more.";
+  "Explore cutting-edge web development insights at Web Hero Blog! Our site offers comprehensive tutorials, expert advice on interview questions, and the latest trends in modern web development.";
 export const TWITTER_HANDLE = "@RSypchenko";
 export const MY_NAME = "Web Hero";
 

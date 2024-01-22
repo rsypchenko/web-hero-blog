@@ -44,12 +44,12 @@ export default defineConfig({
           item.changefreq = "daily";
           item.lastmod = new Date().toISOString();
         } else if (item.url === BASE_URL + "/blog") {
-          item.priority = 1;
+          item.priority = 0.8;
           item.changefreq = "daily";
           item.lastmod = new Date().toISOString();
         } else {
-          item.priority = 0.8;
-          item.changefreq = "daily";
+          item.priority = 0.64;
+          item.changefreq = "weekly";
           item.lastmod = new Date().toISOString();
         }
 
