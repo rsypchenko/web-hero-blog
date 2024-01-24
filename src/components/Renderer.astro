@@ -13,9 +13,10 @@ import ReadMore from "./ReadMore.astro";
 type Props = {
   content: Content;
   tags: any;
+  slug: string;
 };
 
-const { content, tags } = Astro.props;
+const { content, tags, slug } = Astro.props;
 
 const components = {
   Heading: {
@@ -48,8 +49,8 @@ const components = {
   },
 };
 ---
+
 <div>
   <MarkdocRenderer content={content} components={components} />
-  <ReadMore tags={tags} />
+  <ReadMore tags={tags} slug={slug} />
 </div>
-

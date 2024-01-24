@@ -3,7 +3,7 @@ import { readAll } from "../lib/markdoc/read";
 import { blog } from "../lib/markdoc/frontmatter.schema";
 import Card from "./Card.astro";
 
-const { tags } = Astro.props;
+const { tags, slug } = Astro.props;
 
 const tagsMap = tags.reduce((acc, next) => {
   return {
@@ -19,9 +19,15 @@ const posts = await readAll({
 
 const sortedPosts = posts
   .filter((p) => {
-    return p.frontmatter.draft === false && p.frontmatter.tags.some((tag) => tagsMap[tag]);
+    return p.frontmatter.draft === false && p.frontmatter.tags.some((tag) => tagsMap[tag] && p.slug !== slug);
   })
   .slice(0, 4);
+const recommenedPosts = posts
+  .filter((p) => {
+    return p.frontmatter.draft === false && p.frontmatter.popular === true && !sortedPosts.includes(p);
+  })
+  .slice(0, 4);
+const renderPosts = sortedPosts.concat(recommenedPosts).slice(0, 4);
 --- 
 
 <section class="mt-12 border-t-2">
@@ -30,7 +36,7 @@ const sortedPosts = posts
     class="grid flex-col justify-items-center sm:grid-cols-2 gap-2 sm:justify-between"
   >
     {
-      sortedPosts.map((post) => {
+      renderPosts.map((post) => {
         return <Card post={post} />;
       })
     }
