@@ -2,9 +2,9 @@
 const { post, date } = Astro.props;
 ---
 
-<li class="flex flex-col sm:flex-row cursor-pointer mb-4">
+<li class="flex flex-col sm:flex-row cursor-pointer">
   <a href={`/blog/${post.slug}`}>
-    <div class="w-full h-48 sm:h-full sm:w-64 image-placeholder">
+    <div class="w-full sm:44 sm:h-full sm:w-72 image-placeholder">
       <img
         src={"/public/images/placeholder.png"}
         data-src={post.frontmatter.image}
@@ -12,8 +12,8 @@ const { post, date } = Astro.props;
         class="w-full h-full object-cover object-center lazy-loaded-image lazy"
       />
     </div>
-    <div class="flex flex-col justify-items-stretch sm:pl-2">
-      <div class="title flex-1">
+    <div class="flex flex-col sm:h-44 justify-items-stretch sm:pl-2">
+      <div class="title flex-1 pt-4 sm:pt-0">
         {
           post.frontmatter.external ? (
             <a
@@ -54,9 +54,9 @@ const { post, date } = Astro.props;
           {date}
         </time>
       </div> -->
-      <div class="flex mt-4">
+      <div class="flex mt-10 sm:mt-4">
         {
-          post.frontmatter.tags.map((tag) => {
+          post.frontmatter.tags.map((tag: string) => {
             return (
               <span class="text-xs text-gray-500 dark:text-gray-400 mr-1 pl-4 pr-4 pt-2 pb-2 dark:bg-slate-800 bg-slate-100 rounded-sm">
                 {tag}
