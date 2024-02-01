@@ -28,18 +28,18 @@ const formattedDate = new Date(date).toLocaleDateString("en-us", {
   day: "numeric",
 });
 const cannonicals = {
-  'powering-react-application-with-apollo-client': true,
-  'end-to-end-testing-in-react-applications-with-cypress': true,
-  'how-to-prepare-to-frontend-interview': true,
-  '10-javascript-design-patterns': true,
-  'qwik-under-the-hood' : true,
-  'frontend-interview-questions-security' : true,
-  'http-status-codes' : true,
-  'frontend-interview-questions-basics' : true,
-  'understanding-monorepo' : true,
-  'nodejs-21-security-and-updates' : true,
+  "powering-react-application-with-apollo-client": true,
+  "end-to-end-testing-in-react-applications-with-cypress": true,
+  "how-to-prepare-to-frontend-interview": true,
+  "10-javascript-design-patterns": true,
+  "qwik-under-the-hood": true,
+  "frontend-interview-questions-security": true,
+  "http-status-codes": true,
+  "frontend-interview-questions-basics": true,
+  "understanding-monorepo": true,
+  "nodejs-21-security-and-updates": true,
 } as any;
-const isCannonical = cannonicals[slug] || false;;
+const isCannonical = cannonicals[slug] || false;
 ---
 
 <!DOCTYPE html>
@@ -53,24 +53,27 @@ const isCannonical = cannonicals[slug] || false;;
     <GoogleFont />
     <ThemeScript />
     <FontAwesome />
-    { isCannonical && <Cannonical slug={slug} /> }
+    {isCannonical && <Cannonical slug={slug} />}
   </head>
 
-  <body
-    class="max-w-3xl mx-auto min-h-screen px-6 sm:px-8"
-  >
+  <body class="min-h-screen px-6 sm:px-8">
     <Header />
-    <main id="main">
+    <main id="main" class="max-w-4xl mx-auto">
       <section class="blog-post prose max-w-none prose-bubblegum">
-        <h1 class="m-0 mb-[0.25em]">
-          <span class="
-              pl-6 relative block leading-[150%]
-              after:absolute after:content-[''] after:w-2 after:h-full after:top-0 after:left-0 after:bg-primary-green
-            ">
+        <h1 class="pt-10 m-0 mb-[0.25em]">
+          <span
+            class="pl-6 relative block leading-[150%] after:absolute after:content-[''] after:w-2 after:h-full after:top-0 after:left-0 after:bg-primary-green"
+          >
             {title}
           </span>
         </h1>
-        <time class="block mb-[2em] text-text-muted">{formattedDate}</time>
+
+        <time class="flex mb-[1em] mt-[1em] text-text-muted items-center"
+          ><i class="fa fa-calendar mr-2 mb-1" aria-hidden="true"></i>{
+            formattedDate
+          }</time
+        >
+
         <slot name="content" />
       </section>
     </main>

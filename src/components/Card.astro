@@ -2,58 +2,35 @@
 const { post } = Astro.props;
 ---
 
-<div class="w-full flex-col cursor-pointer hover:shadow-xl dark:shadow-slate-800 transition-shadow duration-500">
+<div
+  class="w-full flex-col p-4 rounded-lg cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-800 transition-all"
+>
   <a href={`/blog/${post.slug}`}>
-    <div class="w-full h-48">
+    <div class="w-full h-48 image-placeholder">
       <img
-        src={post.frontmatter.image}
+        src={"/public/images/placeholder.png"}
+        data-src={post.frontmatter.image}
         loading="lazy"
         alt="image"
-        class=" w-full h-full object-cover"
+        class="w-full h-full object-cover rounded-lg lazy-loaded-image lazy not-prose"
       />
     </div>
-    <div class="flex-col p-2 min-h-56">
-      <div class="flex title">
-        {
-          post.frontmatter.external ? (
-            <a
-              href={post.frontmatter.url}
-              target="_blank"
-              class="unset
-              transition-[background-size] duration-300 
-              bg-gradient-to-r bg-left-bottom bg-no-repeat
-              bg-[length:0%_55%] hover:bg-[length:100%_55%] dark:bg-[length:0%_2px] hover:dark:bg-[length:100%_2px]
-              from-primary-blue to-primary-blue dark:from-primary-blue dark:to-primary-blue
-            "
-            >
-              <span>{post.frontmatter.title}</span>
-              <span>
-                <i class="ml-1 mr-1 text-[12px] pb-2 fa-solid fa-up-right-from-square" />
-              </span>
-            </a>
-          ) : (
-            <a
-              href={`/blog/${post.slug}`}
-              class="unset
-              transition-[background-size] duration-300 
-              bg-gradient-to-r bg-left-bottom bg-no-repeat
-              bg-[length:0%_55%] hover:bg-[length:100%_55%] dark:bg-[length:0%_2px] hover:dark:bg-[length:100%_2px]
-              from-primary-blue to-primary-blue dark:from-primary-blue dark:to-primary-blue
-            "
-            >
-              {post.frontmatter.title}
-            </a>
-          )
-        }
+    <div class="flex flex-col p-2 h-48">
+      <div class="flex">
+        <h2 class="unset text-xl margin-0 not-prose">
+          {post.frontmatter.title}
+        </h2>
       </div>
-      <p class="flex flex-1 text-sm font-thin dark:text-gray-600 text-gray-500 mt-2">
+      <p
+        class="flex flex-1 text-sm font-thin dark:text-gray-600 text-gray-500 mt-2"
+      >
         {post.frontmatter.description}
       </p>
       <div class="flex mt-4 flex-wrap">
         {
           post.frontmatter.tags.map((tag) => {
             return (
-              <span class="text-xs text-gray-500 dark:text-gray-400 mr-1 mb-2 pl-4 pr-4 pt-2 pb-2 dark:bg-slate-800 bg-slate-100 rounded-sm">
+              <span class="text-xs text-gray-500 dark:text-gray-400 mr-1 mb-2 px-4 py-2 dark:bg-slate-800 bg-slate-100 border border-slate-300 dark:border-slate-700 rounded-lg">
                 {tag}
               </span>
             );

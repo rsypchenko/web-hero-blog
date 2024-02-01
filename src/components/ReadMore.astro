@@ -30,10 +30,10 @@ const recommenedPosts = posts
 const renderPosts = sortedPosts.concat(recommenedPosts).slice(0, 4);
 --- 
 
-<section class="mt-12 border-t-2">
+<section class="flex flex-col mt-12 border-t">
   <p class="text-2xl text-center">Read More</p>
   <div
-    class="grid flex-col justify-items-center sm:grid-cols-2 gap-2 sm:justify-between"
+    class="grid sm:grid-cols-2 gap-4"
   >
     {
       renderPosts.map((post) => {
@@ -42,3 +42,26 @@ const renderPosts = sortedPosts.concat(recommenedPosts).slice(0, 4);
     }
   </div>
 </section>
+
+<script is:inline>
+  var lazyImages = [].slice.call(
+    document.querySelectorAll(".lazy-loaded-image.lazy")
+  );
+  let lazyImageObserver = new IntersectionObserver(function (
+    entries,
+    observer
+  ) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        let lazyImage = entry.target;
+        lazyImage.src = lazyImage.dataset.src;
+        lazyImage.classList.remove("lazy");
+        lazyImage.classList.add("loaded");
+        lazyImageObserver.unobserve(lazyImage);
+      }
+    });
+  });
+  lazyImages.forEach(function (lazyImage) {
+    lazyImageObserver.observe(lazyImage);
+  });
+</script>

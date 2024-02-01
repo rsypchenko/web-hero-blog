@@ -1,7 +1,7 @@
 ---
 external: false
 draft: false
-title: Rust vs Go
+title: Rust vs Go - Which Is Better For You
 description: Which Language Is Better Suited For What Use Cases?
 date: 2023-12-21
 image: '/images/rust-vs-go.webp'

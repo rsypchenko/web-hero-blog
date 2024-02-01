@@ -10,14 +10,14 @@ const posts = await readAll({
 
 const sortedPosts = posts
   .filter((p) => p.frontmatter.draft !== true && p.frontmatter.popular === true)
-  .slice(0, 4);
+  .slice(0, 6);
 ---
 
-<section class="mb-8">
+<section class="flex flex-col mb-8 max-w-4xl mx-auto">
   <p class="text-2xl pb-4 text-center">Most Popular Posts</p>
 
   <div
-    class="grid flex-col justify-items-center sm:grid-cols-2 gap-3 sm:justify-between"
+    class="grid sm:grid-cols-2 gap-4"
   >
     {
       sortedPosts.map((post) => {

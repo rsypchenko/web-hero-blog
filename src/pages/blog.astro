@@ -22,44 +22,45 @@ const sortedPosts = posts
 
 <PageLayout>
   <PageMeta title={`Blog | ${SITE_TITLE}`} slot="meta" />
-  <section slot="main">
-    <ul>
-      {
-        sortedPosts.map((post) => {
-          const formattedDate = new Date(
-            post.frontmatter.date
-          ).toLocaleDateString("en-us", {
-            year: "numeric",
-            month: "short",
-            day: "numeric",
-          });
-          return (
-            <BlogItem
-              post={post}
-              date={formattedDate}
-            />
-          );
-        })
-      }
-    </ul>
+  <section class="max-w-4xl mx-auto" slot="main">
+    <div class="flex justify-center">
+      <ul class="mt-10">
+        {
+          sortedPosts.map((post) => {
+            const formattedDate = new Date(
+              post.frontmatter.date
+            ).toLocaleDateString("en-us", {
+              year: "numeric",
+              month: "short",
+              day: "numeric",
+            });
+            return <BlogItem post={post} date={formattedDate} />;
+          })
+        }
+      </ul>
+    </div>
   </section>
 </PageLayout>
 
-
 <script is:inline>
-  var lazyImages = [].slice.call(document.querySelectorAll(".lazy-loaded-image.lazy"));
-  let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
-      entries.forEach(function(entry) {
-          if (entry.isIntersecting) {
-              let lazyImage = entry.target;
-              lazyImage.src = lazyImage.dataset.src;
-              lazyImage.classList.remove("lazy");
-              lazyImage.classList.add("loaded");
-              lazyImageObserver.unobserve(lazyImage);
-          }
-      });
+  var lazyImages = [].slice.call(
+    document.querySelectorAll(".lazy-loaded-image.lazy")
+  );
+  let lazyImageObserver = new IntersectionObserver(function (
+    entries,
+    observer
+  ) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        let lazyImage = entry.target;
+        lazyImage.src = lazyImage.dataset.src;
+        lazyImage.classList.remove("lazy");
+        lazyImage.classList.add("loaded");
+        lazyImageObserver.unobserve(lazyImage);
+      }
+    });
   });
-  lazyImages.forEach(function(lazyImage) {
-      lazyImageObserver.observe(lazyImage);
+  lazyImages.forEach(function (lazyImage) {
+    lazyImageObserver.observe(lazyImage);
   });
-  </script>
+</script>

@@ -175,11 +175,11 @@
     color: rgb(var(--color-text-muted));
   }
 
-  ul:not(.unset):not(:where([class~="prose"] *)) > li,
+  /* ul:not(.unset):not(:where([class~="prose"] *)) > li,
   ol:not(.unset):not(:where([class~="prose"] *)) > li {
     margin-top: 2em;
     margin-bottom: 2em;
-  }
+  } */
 
   ::selection {
     background: theme("colors.bg.selection");

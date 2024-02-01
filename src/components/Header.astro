@@ -3,35 +3,45 @@ import Nav from "./Nav.astro";
 import DarkModeToggle from "./DarkModeToggle.astro";
 ---
 
-<header class="relative">
+<!-- container mx-auto relative md:sticky md:top-0 md:z-20 backdrop-blur border-b border-neutral-200 dark:border-neutral-800 transition-all px-4 -->
+
+<header
+  class="relative border-b border-neutral-200 dark:border-neutral-800 transition-all px-4"
+>
   <a
-    class="unset absolute z-10 left-[50%] -top-[100rem] translate-x-[-50%] bg-white text-black px-8 py-2 focus:top-[initial]"
+    class="unset absolute z-40 left-[50%] -top-[100rem] translate-x-[-50%] bg-white text-black px-8 py-2 focus:top-[initial]"
     href="#main"
   >
     Skip to content
   </a>
-  <a href="/" class="absolute hidden sm:flex sm:left-0">
+  <a href="/" class="absolute hidden sm:flex">
     <img src="/images/wh2.png" width="180" class="" />
   </a>
-
   <Nav />
   <div
     class="justify-self-end py-2 items-center content-center text-text-bold hidden sm:flex"
   >
-    <!-- <a
+    <a
       class="unset ml-4 rounded-sm transition-[background-size] duration-150 ease-in-out bg-left-bottom bg-[length:0%_55%] hover:bg-[length:100%_55%] bg-no-repeat bg-gradient-to-r from-primary-yellow to-primary-yellow dark:bg-none dark:hover:text-primary-yellow"
-      href="https://github.com/rsypchenko"
+      href="https://www.linkedin.com/in/sypchenko/"
     >
-      <i class="fa-brands fa-github" aria-hidden="true" title="GitHub"></i>
-      <span>GitHub</span>
-    </a> -->
-    <!-- <a
-      class="unset ml-4 rounded-sm transition-[background-size] duration-150 bg-left-bottom bg-[length:0%_55%] hover:bg-[length:100%_55%] bg-no-repeat bg-gradient-to-r from-primary-blue to-primary-blue dark:bg-none dark:hover:text-primary-blue"
+      <i class="fa-brands fa-linkedin fa-lg" aria-hidden="true" title="Linkedin"
+      ></i>
+    </a>
+    <a
+      class="unset ml-4 rounded-sm transition-[background-size] duration-150 ease-in-out bg-left-bottom bg-[length:0%_55%] hover:bg-[length:100%_55%] bg-no-repeat bg-gradient-to-r from-primary-yellow to-primary-yellow dark:bg-none dark:hover:text-primary-yellow"
+      href="https://twitter.com/RSypchenko"
+    >
+      <i class="fa-brands fa-twitter fa-lg" aria-hidden="true" title="Twitter"
+      ></i>
+    </a>
+    <a
+      class="unset ml-4 rounded-sm transition-[background-size] duration-150 ease-in-out bg-left-bottom bg-[length:0%_55%] hover:bg-[length:100%_55%] bg-no-repeat bg-gradient-to-r from-primary-yellow to-primary-yellow dark:bg-none dark:hover:text-primary-yellow"
       href="https://medium.com/@r.sipchenko"
     >
-      <i class="fa-brands fa-medium p-2" aria-hidden="true" title="Medium"></i>
-      <span>Medium</span>
-    </a> -->
+      <i class="fa-brands fa-medium fa-lg" aria-hidden="true" title="Medium"
+      ></i>
+    </a>
   </div>
   <DarkModeToggle />
 </header>
