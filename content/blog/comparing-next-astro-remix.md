@@ -6,7 +6,7 @@ description: Delve into the core strengths, unique offerings, and potential chal
 date: 2023-09-01
 image: '/images/next.webp'
 thumb: '/images/thumbs/10.png'
-tags: ['front-end', 'web development', 'nextjs', 'astro']
+tags: ['front-end', 'nextjs', 'astro']
 popular: true
 ---
 
