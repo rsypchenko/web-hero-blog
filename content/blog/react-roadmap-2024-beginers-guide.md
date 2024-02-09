@@ -1,8 +1,8 @@
 ---
 external: false
 draft: false
-title: The React Roadmap for 2024 - Beginners Guide
-description: Explore sites that can help to build your perfect resume
+title: React Roadmap for 2024 - Beginners Guide
+description: How to start developing React app in 2024. Exploring best tools and libs for begginers
 date: 2024-02-08
 image: '/images/react-roadmap-2024.webp'
 thumb: '/images/thumbs/10.png'
