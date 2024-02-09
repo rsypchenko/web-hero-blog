@@ -8,7 +8,7 @@ const { post } = Astro.props;
   <a href={`/blog/${post.slug}`}>
     <div class="w-full h-48 image-placeholder">
       <img
-        src={"/public/images/placeholder.png"}
+        src={"https://fakeimg.pl/200x100?text=LOADING..."}
         data-src={post.frontmatter.image}
         loading="lazy"
         alt="image"
