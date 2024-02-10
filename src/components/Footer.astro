@@ -66,7 +66,7 @@ const latestPosts = posts
               <li class="text-sm">
                 <a
                   class="unset gradient-link tracking-wider font-light bg-clip-text text-transparent bg-gradient-to-r from-[#00abda] to-[#1476ff]  hover:after:bg-gradient-to-r hover:after:from-[#00abda] hover:after:to-[#1476ff]"
-                  href="{{ post.url }}"
+                  href={`blog/${post.slug}`}
                 >
                   {post.frontmatter.title}
                 </a>
@@ -84,7 +84,7 @@ const latestPosts = posts
               <li class="text-sm">
                 <a
                   class="unset font-light gradient-link tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-[#00abda] to-[#1476ff] hover:after:bg-gradient-to-r hover:after:from-[#00abda] hover:after:to-[#1476ff]"
-                  href="{{ post.url }}"
+                  href={`blog/${post.slug}`}
                 >
                   {post.frontmatter.title}
                 </a>
