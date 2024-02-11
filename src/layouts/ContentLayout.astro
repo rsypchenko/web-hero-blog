@@ -28,16 +28,7 @@ const formattedDate = new Date(date).toLocaleDateString("en-us", {
   day: "numeric",
 });
 const cannonicals = {
-  "powering-react-application-with-apollo-client": true,
-  "end-to-end-testing-in-react-applications-with-cypress": true,
-  "how-to-prepare-to-frontend-interview": true,
-  "10-javascript-design-patterns": true,
-  "qwik-under-the-hood": true,
-  "frontend-interview-questions-security": true,
-  "http-status-codes": true,
-  "frontend-interview-questions-basics": true,
-  "understanding-monorepo": true,
-  "nodejs-21-security-and-updates": true,
+  "using-jotai-in-your-react-application": "https://medium.com/p/de460568ac9d"
 } as any;
 const isCannonical = cannonicals[slug] || false;
 ---
@@ -53,7 +44,7 @@ const isCannonical = cannonicals[slug] || false;
     <GoogleFont />
     <ThemeScript />
     <FontAwesome />
-    {isCannonical && <Cannonical slug={slug} />}
+    {isCannonical && <Cannonical link={cannonicals[slug]} />}
   </head>
 
   <body class="min-h-screen">

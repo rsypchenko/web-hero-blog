@@ -1,7 +1,7 @@
 ---
 external: false
 draft: false
-title: 4 Ways To Create React App in 2024
+title: 4 Ways To Create a React App in 2024
 description: In 2024, there are more ways than ever to get your React projects started. But which one should you choose?
 date: 2024-02-10
 image: '/images/create-react-app-in-2024.webp'
