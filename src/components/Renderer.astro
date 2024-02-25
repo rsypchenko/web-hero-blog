@@ -1,56 +1,22 @@
 ---
-import { MarkdocRenderer } from "astro-markdoc-renderer";
-import type { Content } from "astro-markdoc-renderer";
-import YouTubeEmbed from "./YouTubeEmbed.astro";
-import TweetEmbed from "./TweetEmbed.astro";
-import CodePenEmbed from "./CodePenEmbed.astro";
-import GitHubGistEmbed from "./GitHubGistEmbed.astro";
-import CodeBlock from "./CodeBlock.astro";
-import Heading from "./Heading.astro";
-import SandBoxEmbed from "./SandBoxEmbed.astro";
 import ReadMore from "./ReadMore.astro";
+import Markdoc from '@markdoc/markdoc';
+
 
 type Props = {
-  content: Content;
-  tags: any;
-  slug: string;
+  article: any;
 };
 
-const { content, tags, slug } = Astro.props;
+const { article } = Astro.props;
 
-const components = {
-  Heading: {
-    Component: Heading,
-    props: {},
-  },
-  CodeBlock: {
-    Component: CodeBlock,
-    props: {},
-  },
-  YouTubeEmbed: {
-    Component: YouTubeEmbed,
-    props: {},
-  },
-  TweetEmbed: {
-    Component: TweetEmbed,
-    props: {},
-  },
-  CodePenEmbed: {
-    Component: CodePenEmbed,
-    props: {},
-  },
-  GitHubGistEmbed: {
-    Component: GitHubGistEmbed,
-    props: {},
-  },
-  SandBoxEmbed: {
-    Component: SandBoxEmbed,
-    props: {},
-  },
-};
+const cover = `${import.meta.env.STRAPI_URL}${article.attributes.cover.data.attributes.url}`;
+const ast = Markdoc.parse(article.attributes.content);
+const content = Markdoc.transform(ast, /* config */);
+const html = Markdoc.renderers.html(content);
 ---
 
 <div class="flex flex-col">
-  <MarkdocRenderer content={content} components={components} />
-  <ReadMore tags={tags} slug={slug} />
+  <img src={cover} alt={article.attributes.title} class="w-full h-96 object-cover mb-4" />
+  <Fragment set:html={html} />
+  <ReadMore tags={article.attributes.tags.data.map((tag: any) => tag.attributes.name)} slug={article.attributes.slug} />
 </div>

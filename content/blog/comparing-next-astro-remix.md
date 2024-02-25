@@ -27,16 +27,19 @@ Astro websites are entirely static, with no JavaScript code whatsoever. When a c
 
 
 ### What is Next.js?
+
 [Next](https://nextjs.org/) is an open-source React framework for quickly creating server-rendered React applications. It adds structure and features and handles the React tooling and configuration required for your application.
 
 It can be used to solve common application requirements like routing, data retrieval, and integrations. Next.js was created to provide an easy-to-use development framework that would reduce the time and effort required to develop full-fledged, SSR-friendly web applications while improving the end user and developer experience. The [documentation](https://nextjs.org/docs) is a great place to start if you want to start with this framework.
 
 ### What is Remix?
+
 [Remix](https://remix.run/) is an edge native, full-stack JavaScript framework for building modern, fast, and resilient user experiences. It unifies the client and server with web standards so you can think less about code and more about your product. (according to the official website remix.run)
 
 ### Key Features
 
 #### Astro
+
 - Zero-config: Any config explained will be handled by our astro add CLI command (i.e., add Svelte support with astro add svelte).
 - Astro is UI-agnostic: meaning you can Bring Your Own UI Framework (BYOF).
 - Easy to use: Astro’s goal is to be accessible to every web developer. Astro was designed to feel familiar and approachable regardless of skill level or experience with web development.
@@ -46,6 +49,7 @@ It can be used to solve common application requirements like routing, data retri
 - Fully-featured but flexible: Astro is an all-in-one web framework with everything you need to build a website. Astro includes a component syntax, file-based routing, asset handling, a build process, bundling, optimizations, data fetching, and more. You can build great websites without ever reaching outside of Astro’s core feature set.
 
 #### Remix
+
 - Routes: Like other frameworks, Remix allows developers to manage the different routes of their web projects using JavaScript/TypeScript files that contain handler functions. We can generate routes on our website to create files that follow the file system hierarchy of our projects, creating analog URLs for our pages. Remix routes work using the partial routing feature provided by React-Router.
 - Nested components: Remix allows you to manage nested pages and components. We can create a file to handle a certain route and, at the same level in the file system, a folder with the same name. All the files we create inside that folder will be nested components of the parent route instead of different pages.
 - Error Handling: Nested components bring another benefit: if an error occurs while rendering a certain component, it doesn’t affect the other nested parts of the page.
@@ -53,6 +57,7 @@ It can be used to solve common application requirements like routing, data retri
 - Loaders and Actions: Remix provides two different types of functions to create server-side dynamic content. The loader functions handle GET HTTP requests in the server, mainly used to get data from different sources.
 
 #### Next
+
 - Async Components & Data Fetching: Async components are a new technique for obtaining data for server-rendered components introduced in Next.js 13. We can render async components using Promises with async and await.
 - React Server Components: Server components enable us to execute and render React components on the server side, resulting in faster delivery, a smaller JavaScript bundle, and lower client-side rendering costs.
 app/ Directory for File-Based Routing(Beta): Routes can be specified using the structure of your project directory. Simply place an entry point in the pages directory and create a new route.
@@ -61,10 +66,12 @@ app/ Directory for File-Based Routing(Beta): Routes can be specified using the s
 - Static Exports: Next.js allows you to export a fully static site from your app using the next export command.
 
 ### Hydration
+
 Hydration is a client-side JavaScript technique for converting a static HTML page into a dynamic page. This provides a pleasant user experience by displaying a rendered component on the page but with attached event handlers. Hydration occurs before user interaction on static pages. The user experience suffers as a result.
 
 
 #### Astro
+
 Astro handles this through a method known as partial hydration. The method of loading individual components only when needed while leaving the remainder of the page as static HTML is known as partial hydration. Island design is critical to this process because it promotes little bits of involvement.
 
 - Comparing Next.js vs. Astro Performance Section titled Comparing Next.js vs. Astro Performance in most cases, Astro websites will load significantly faster than Next.js websites.
@@ -72,6 +79,7 @@ Astro handles this through a method known as partial hydration. The method of lo
 - This creates a slower page load and worse performance for your website.
 
 #### Next.js
+
 Next.js does not allow partial hydration either. There is experimental support for non-JavaScript webpages in Next.js but none for hydrating components.
 
 - Next.js doesn’t support partial hydration and instead makes the user load and rehydrate the entire page in the browser, even if most of the page content is static.
@@ -80,6 +88,7 @@ Next.js does not allow partial hydration either. There is experimental support f
 
 
 #### Remix
+
 Remix does not support partial hydration. There are assumptions that Remix will function with the new React 18 suspense features, but Remix does not allow partial hydration.
 
 

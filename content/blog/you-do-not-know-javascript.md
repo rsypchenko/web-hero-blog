@@ -12,7 +12,7 @@ popular: true
 
 ![JavaScript](/images/javascript-core.webp)
 
-As a Senior Software Developer, I meet a lot of developers who don't know these basic JavaScript core principles, and in this article, I will share some examples and explain. 
+As a Senior Software Developer, I meet a lot of developers who don't know these basic JavaScript core principles, and in this article, I will share some examples and explain.
 So, let's jump to the code examples!
 
 ### [] is equal ![]

@@ -1,21 +1,20 @@
 ---
-import { readAll } from "../lib/markdoc/read";
-import { blog } from "../lib/markdoc/frontmatter.schema";
 import Card from "./Card.astro";
+import fetchApi from "src/lib/strapi";
+import type Article from "src/interfaces/article";
 
-const posts = await readAll({
-  directory: "blog",
-  frontmatterSchema: blog,
+const articles = await fetchApi<Article[]>({
+  endpoint: "articles",
+  wrappedByKey: "data",
+  query: {
+    sort: {
+      created: 'desc'
+    },
+    pagination: {
+      limit: 4
+    }
+  },
 });
-
-const sortedPosts = posts
-  .filter((p) => p.frontmatter.draft !== true)
-  .sort(
-    (a, b) =>
-      new Date(b.frontmatter.date).valueOf() -
-      new Date(a.frontmatter.date).valueOf()
-  )
-  .slice(0, 6);
 ---
 
 <section class="mb-8 max-w-4xl mx-auto">
@@ -23,7 +22,7 @@ const sortedPosts = posts
     <h2
       class="text-3xl text-center bg-left-bottom bg-[length:100%_35%] bg-no-repeat bg-gradient-to-r from-primary-yellow to-primary-yellow dark:from-primary-blue dark:to-primary-blue" 
     >
-      Latest Posts
+      Latest
     </h2>
   </div>
 
@@ -31,7 +30,7 @@ const sortedPosts = posts
     class="grid justify-items-center sm:grid-cols-2 gap-4 sm:justify-between"
   >
     {
-      sortedPosts.map((post) => {
+      articles.map((post) => {
         return <Card post={post} />;
       })
     }

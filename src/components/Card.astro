@@ -1,15 +1,17 @@
 ---
 const { post } = Astro.props;
+const image = `${import.meta.env.STRAPI_URL}${post.attributes.cover.data.attributes.formats.small.url}`;
+const tags = post.attributes.tags?.data?.map((tag: any) => tag.attributes.name);
 ---
 
 <div
   class="w-full flex-col p-4 rounded-lg cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-800 transition-all"
 >
-  <a href={`/blog/${post.slug}`}>
+  <a href={`/blog/${post.attributes.slug}`}>
     <div class="w-full h-48 image-placeholder">
       <img
         src={"https://fakeimg.pl/200x100?text=LOADING..."}
-        data-src={post.frontmatter.image}
+        data-src={image}
         loading="lazy"
         alt="image"
         class="w-full h-full object-cover rounded-lg lazy-loaded-image lazy not-prose"
@@ -18,17 +20,17 @@ const { post } = Astro.props;
     <div class="flex flex-col p-2 h-48">
       <div class="flex">
         <h2 class="unset text-xl margin-0 not-prose">
-          {post.frontmatter.title}
+          {post.attributes.title}
         </h2>
       </div>
       <p
         class="flex flex-1 text-sm font-thin dark:text-gray-600 text-gray-500 mt-2"
       >
-        {post.frontmatter.description}
+        {post.attributes.description}
       </p>
       <div class="flex mt-4 flex-wrap">
         {
-          post.frontmatter.tags.map((tag) => {
+          tags?.map((tag) => {
             return (
               <span class="text-xs text-gray-500 dark:text-gray-400 mr-1 mb-2 px-4 py-2 dark:bg-slate-800 bg-slate-100 border border-slate-300 dark:border-slate-700 rounded-lg">
                 {tag}

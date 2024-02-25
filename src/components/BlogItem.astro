@@ -1,18 +1,20 @@
 ---
-const { post, date } = Astro.props;
+const { post } = Astro.props;
+const thumb = `${import.meta.env.STRAPI_URL}${post.attributes.cover.data.attributes.formats.thumbnail.url}`;
+const tags = post.attributes.tags.data.map((tag: any) => tag.attributes.name);
 ---
 
 <li
   class="flex mb-2 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all p-4 rounded-xl"
 >
   <a
-    href={`/blog/${post.slug}`}
+    href={`/blog/${post.attributes.slug}`}
     class="flex w-full flex-col sm:flex-row justify-between"
   >
     <div class="w-full h-44 sm:w-72 image-placeholder">
       <img
         src={"https://fakeimg.pl/200x100?text=LOADING..."}
-        data-src={post.frontmatter.image}
+        data-src={thumb}
         alt="image"
         class="w-full h-full object-cover lazy-loaded-image lazy rounded-lg"
       />
@@ -20,15 +22,15 @@ const { post, date } = Astro.props;
     <div class="flex flex-1 flex-col sm:h-44 justify-between sm:pl-4">
       <div class="mr-4 sm:pt-0">
         <h2 class="text-xl unset">
-          {post.frontmatter.title}
+          {post.attributes.title}
         </h2>
         <p class="text-sm font-thin dark:text-gray-500 mt-2">
-          {post.frontmatter.description}
+          {post.attributes.description}
         </p>
       </div>
       <div class="flex">
         {
-          post.frontmatter.tags.map((tag: string) => {
+          tags.map((tag: string) => {
             return (
               <span class="text-xs text-gray-500 dark:text-gray-400 mr-1 pl-4 pr-4 pt-2 pb-2 dark:bg-slate-800 bg-slate-100 rounded-lg border border-slate-300 dark:border-slate-700">
                 {tag}
@@ -38,10 +40,5 @@ const { post, date } = Astro.props;
         }
       </div>
     </div>
-    <!-- <div class="text-text-muted text-sm italic justify-self-end">
-        <time datetime={post.frontmatter.date.toISOString()}>
-          {date}
-        </time>
-      </div> -->
   </a>
 </li>
