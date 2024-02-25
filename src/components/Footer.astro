@@ -1,29 +1,34 @@
 ---
-import { readAll } from "../lib/markdoc/read";
-import { blog } from "../lib/markdoc/frontmatter.schema";
+import fetchApi from "src/lib/strapi";
+import type Article from "src/interfaces/article";
 
-const posts = await readAll({
-  directory: "blog",
-  frontmatterSchema: blog,
+const popularPosts = await fetchApi<Article[]>({
+  endpoint: "articles",
+  wrappedByKey: "data",
+  query: {
+    filters: {
+      popular: {
+        $eq: true,
+      },
+    },
+    pagination: {
+      limit: 10,
+    }
+  },
 });
 
-const popularPosts = posts
-  .filter((p) => p.frontmatter.draft !== true && p.frontmatter.popular === true)
-  .sort(
-    (a, b) =>
-      new Date(b.frontmatter.date).valueOf() -
-      new Date(a.frontmatter.date).valueOf()
-  )
-  .slice(0, 6);
-
-const latestPosts = posts
-  .filter((p) => p.frontmatter.draft !== true)
-  .sort(
-    (a, b) =>
-      new Date(b.frontmatter.date).valueOf() -
-      new Date(a.frontmatter.date).valueOf()
-  )
-  .slice(0, 6);
+const latestPosts = await fetchApi<Article[]>({
+  endpoint: "articles",
+  wrappedByKey: "data",
+  query: {
+    sort: {
+      created: "desc",
+    },
+    pagination: {
+      limit: 10,
+    }
+  },
+});
 ---
 
 <footer class="flex mt-4 border-t border-neutral-200 dark:border-neutral-800">
@@ -62,9 +67,11 @@ const latestPosts = posts
         <h2>Popular Posts</h2>
         <ul>
           {
-            popularPosts.map((post) => (
+            popularPosts?.map((post) => (
               <li class="text-sm">
-                <a href={`/blog/${post.slug}`}>{post.frontmatter.title}</a>
+                <a href={`/blog/${post.attributes.slug}`}>
+                  {post.attributes.title}
+                </a>
               </li>
             ))
           }
@@ -75,9 +82,11 @@ const latestPosts = posts
         <h2>Latest Posts</h2>
         <ul>
           {
-            latestPosts.map((post) => (
+            latestPosts?.map((post) => (
               <li class="text-sm">
-                <a href={`/blog/${post.slug}`}>{post.frontmatter.title}</a>
+                <a href={`/blog/${post.attributes.slug}`}>
+                  {post.attributes.title}
+                </a>
               </li>
             ))
           }

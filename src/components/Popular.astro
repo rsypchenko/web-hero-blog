@@ -1,26 +1,33 @@
 ---
-import { readAll } from "../lib/markdoc/read";
-import { blog } from "../lib/markdoc/frontmatter.schema";
 import Card from "./Card.astro";
 
-const posts = await readAll({
-  directory: "blog",
-  frontmatterSchema: blog,
-});
+import fetchApi from "src/lib/strapi";
+import type Article from "src/interfaces/article";
 
-const sortedPosts = posts
-  .filter((p) => p.frontmatter.draft !== true && p.frontmatter.popular === true)
-  .slice(0, 6);
+const articles = await fetchApi<Article[]>({
+  endpoint: "articles",
+  wrappedByKey: "data",
+  query: {
+    filters: {
+      popular: {
+        $eq: true,
+      }
+    },
+    pagination: {
+      limit: 4
+    }
+  },
+});
 ---
 
 <section class="flex flex-col mb-8 max-w-4xl mx-auto">
   <div class="flex text-center justify-center pb-4">
-    <h2 class="text-2xl text-center bg-left-bottom bg-[length:100%_35%] bg-no-repeat bg-gradient-to-r from-primary-yellow to-primary-yellow dark:from-primary-blue dark:to-primary-blue">Most Popular Posts</h2>
+    <h2 class="text-3xl text-center bg-left-bottom bg-[length:100%_35%] bg-no-repeat bg-gradient-to-r from-primary-yellow to-primary-yellow dark:from-primary-blue dark:to-primary-blue">Most Popular</h2>
   </div>
 
   <div class="grid sm:grid-cols-2 gap-4">
     {
-      sortedPosts.map((post) => {
+      articles?.map((post) => {
         return <Card post={post} />;
       })
     }

@@ -1,52 +1,34 @@
 ---
-import { readOne, readAll } from "../../lib/markdoc/read";
-import { blog } from "../../lib/markdoc/frontmatter.schema";
 import Renderer from "../../components/Renderer.astro";
 import BlogPostMeta from "../../components/BlogPostMeta.astro";
 import ContentLayout from "../../layouts/ContentLayout.astro";
-import { SITE_URL } from "../../config";
+import type Article from "src/interfaces/article";
+import fetchApi from "src/lib/strapi";
 
 export async function getStaticPaths() {
-  const posts = await readAll({
-    directory: "blog",
-    frontmatterSchema: blog,
+  const articles = await fetchApi<Article[]>({
+    endpoint: 'articles',
+    wrappedByKey: 'data',
   });
 
-  // we don't want to generate pages for posts that link to external websites
-  const filteredPosts = posts
-    .filter((p) => p.frontmatter.draft !== true)
-    .filter(({ frontmatter }) => !frontmatter.external);
-
-  return filteredPosts.map((post) => {
-    return { params: { slug: post.slug } };
-  });
+  return articles.map((article) => ({
+    params: { slug: article.attributes.slug },
+    props: article,
+  }));
 }
+type Props = Article;
 
-const { slug } = Astro.params;
-if (typeof slug !== "string") {
-  throw Error(`slug should be string. Received: ${slug}`);
-}
-
-const { content, frontmatter } = await readOne({
-  directory: "blog",
-  slug,
-  frontmatterSchema: blog,
-});
-
-const ogImageAbsoluteUrl =
-  frontmatter.external !== true && frontmatter.ogImagePath
-    ? new URL(frontmatter.ogImagePath, SITE_URL).toString()
-    : undefined;
+const article = Astro.props;
 ---
 
-<ContentLayout slug={slug} title={frontmatter.title} date={frontmatter.date}>
+<ContentLayout slug={article.attributes.slug} title={article.attributes.title} date={article.attributes.createdAt}>
   <BlogPostMeta
-    title={frontmatter.title}
-    description={frontmatter.external ? undefined : frontmatter.description}
-    publishDate={frontmatter.date.toISOString()}
-    pagePath={`/blog/${slug}`}
-    ogImageAbsoluteUrl={ogImageAbsoluteUrl}
+    title={article.attributes.title}
+    description={article.attributes.description}
+    publishDate={article.attributes.createdAt}
+    pagePath={`/blog/${article.attributes.slug}`}
+    ogImageAbsoluteUrl={''}
     slot="meta"
   />
-  <Renderer content={content} tags={frontmatter.tags} slug={slug} slot="content" />
+  <Renderer article={article} slot="content" />
 </ContentLayout>

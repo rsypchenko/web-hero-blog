@@ -13,36 +13,22 @@ import ThemeScript from "./ThemeScript.astro";
 import Favicon from "./Favicon.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import Cannonical from "./Cannonical.astro";
 
 export interface Props {
   title: string;
-  date: Date;
+  date: string;
   slug: any;
 }
 
 const { title, date, slug } = Astro.props;
-const formattedDate = new Date(date).toLocaleDateString("en-us", {
-  year: "numeric",
-  month: "short",
-  day: "numeric",
-});
-const cannonicals = {
-  "using-jotai-in-your-react-application": "https://medium.com/p/de460568ac9d",
-  "how-to-master-javascript-in-2024": "https://medium.com/p/31a8ecb89d88",
-  "powering-react-application-with-apollo-client": "https://medium.com/p/3c3f56c3b8f3",
-  "how-to-send-email-using-nodejs": "https://medium.com/p/40fe5708607c",
-  "techniques-for-conditional-rendering-in-react": "https://medium.com/p/96af874bb3d6",
-  "solid-principles-in-react-application": "https://medium.com/p/60294a56f885",
-  "optimizing-frontend-performance": "https://medium.com/p/046d4c4466fd",
-  "nodejs-21-leap-forward-in-security-and-features": "https://medium.com/p/93146d6f8804",
-  "mastering-javascript-in-2023-the-comprehesive-guide": "https://medium.com/p/62d03de3da32",
-  "comparing-react-state-management-solutions": "https://medium.com/p/7fc5173111da",
-  "animating-react-components-with-framer-motion": "https://medium.com/p/c7f2671a2192",
-  "rust-vs-go-with-is-better": "https://medium.com/p/18a4ea0a1926",
-
-} as any;
-const isCannonical = cannonicals[slug] || false;
+const formattedDate = new Date(date).toLocaleDateString(
+  "en-us",
+  {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+  }
+);
 ---
 
 <!DOCTYPE html>
@@ -56,7 +42,6 @@ const isCannonical = cannonicals[slug] || false;
     <GoogleFont />
     <ThemeScript />
     <FontAwesome />
-    {isCannonical && <Cannonical link={cannonicals[slug]} />}
   </head>
 
   <body class="min-h-screen">
