@@ -9,7 +9,7 @@ type Props = {
 
 const { article } = Astro.props;
 
-const cover = `${import.meta.env.STRAPI_URL}${article.attributes.cover?.data?.attributes?.url}`;
+const cover = `${import.meta.env.STRAPI_URL}${article.attributes.cover?.data?.attributes.url}`;
 const ast = Markdoc.parse(article.attributes.content);
 const content = Markdoc.transform(ast, /* config */);
 const html = Markdoc.renderers.html(content);
