@@ -1,6 +1,6 @@
 ---
 const { post } = Astro.props;
-const image = `${import.meta.env.STRAPI_URL}${post.attributes.cover.data.attributes.formats.small.url}`;
+const image = `${import.meta.env.STRAPI_URL}${post.attributes?.cover?.data?.attributes?.formats?.small?.url}`;
 const tags = post.attributes.tags?.data?.map((tag: any) => tag.attributes.name);
 ---
 
