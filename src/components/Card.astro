@@ -1,11 +1,11 @@
 ---
 const { post } = Astro.props;
-const image = `${import.meta.env.STRAPI_URL}${post.attributes?.cover?.data?.attributes?.formats?.small?.url}`;
+const image = `${post.attributes?.cover?.data?.attributes?.formats?.small?.url}`;
 const tags = post.attributes.tags?.data?.map((tag: any) => tag.attributes.name);
 ---
 
 <div
-  class="w-full flex-col p-4 rounded-lg cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-800 transition-all"
+  class="w-full flex-col p-4 rounded-lg cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-800 transition-all shadow-lg"
 >
   <a href={`/blog/${post.attributes.slug}`}>
     <div class="w-full h-48 image-placeholder">
@@ -32,7 +32,7 @@ const tags = post.attributes.tags?.data?.map((tag: any) => tag.attributes.name);
         {
           tags?.map((tag) => {
             return (
-              <span class="text-xs text-gray-500 dark:text-gray-400 mr-1 mb-2 px-4 py-2 dark:bg-slate-800 bg-slate-100 border border-slate-300 dark:border-slate-700 rounded-lg">
+              <span class="text-xs text-gray-500 dark:text-gray-400 mr-1 mb-2 px-4 py-2 border border-slate-300 dark:border-slate-700 rounded-lg">
                 {tag}
               </span>
             );

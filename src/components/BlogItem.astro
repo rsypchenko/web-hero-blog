@@ -1,11 +1,11 @@
 ---
 const { post } = Astro.props;
-const thumb = `${import.meta.env.STRAPI_URL}${post?.attributes?.cover?.data?.attributes?.formats?.thumbnail?.url}`;
+const thumb = `${post?.attributes?.cover?.data?.attributes?.formats?.small?.url}`;
 const tags = post.attributes.tags.data.map((tag: any) => tag.attributes.name);
 ---
 
 <li
-  class="flex mb-2 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all p-4 rounded-xl"
+  class="flex mb-2 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all p-4"
 >
   <a
     href={`/blog/${post.attributes.slug}`}
