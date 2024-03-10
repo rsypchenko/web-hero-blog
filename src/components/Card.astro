@@ -5,7 +5,7 @@ const tags = post.attributes.tags?.data?.map((tag: any) => tag.attributes.name);
 ---
 
 <div
-  class="w-full flex-col p-4 rounded-lg cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-800 transition-all shadow-lg"
+  class="w-full flex-col p-4 rounded-lg cursor-pointer hover:shadow-2xl dark:hover:bg-slate-800 transition-all shadow-lg"
 >
   <a href={`/blog/${post.attributes.slug}`}>
     <div class="w-full h-48 image-placeholder">

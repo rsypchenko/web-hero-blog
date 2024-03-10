@@ -35,8 +35,8 @@ const latestPosts = await fetchApi<Article[]>({
   <div class="flex flex-col container mx-auto">
     <div class="flex flex-col sm:flex-row w-full justify-around p-4">
       <div class="flex flex-col">
-        <h2>Follow me</h2>
-        <div class="flex flex-col mt-2 mb-4">
+        <h2 class="text-xl">Follow me</h2>
+        <div class="flex flex-col mt-4 mb-4">
           <a
             class="unset rounded-sm transition-[background-size] duration-150 ease-in-out bg-left-bottom bg-[length:0%_55%] hover:bg-[length:100%_55%] bg-no-repeat bg-gradient-to-r from-primary-yellow to-primary-yellow dark:bg-none dark:hover:text-primary-yellow"
             href="https://twitter.com/RSypchenko"
@@ -64,12 +64,12 @@ const latestPosts = await fetchApi<Article[]>({
         </div>
       </div>
       <div class="flex flex-col">
-        <h2>Popular Posts</h2>
-        <ul>
+        <h2 class="text-xl">Popular Posts</h2>
+        <ul class="mt-4">
           {
             popularPosts?.map((post) => (
               <li class="text-sm">
-                <a href={`/blog/${post.attributes.slug}`}>
+                <a href={`/blog/${post.attributes.slug}`} class="unset rounded-sm transition-[background-size] duration-150 ease-in-out bg-left-bottom bg-[length:0%_55%] hover:bg-[length:100%_55%] bg-no-repeat bg-gradient-to-r from-primary-yellow to-primary-yellow dark:bg-none dark:hover:text-primary-yellow">
                   {post.attributes.title}
                 </a>
               </li>
@@ -79,12 +79,12 @@ const latestPosts = await fetchApi<Article[]>({
       </div>
 
       <div class="hidden lg:flex flex-col mt-4 sm:mt-0">
-        <h2>Latest Posts</h2>
-        <ul>
+        <h2 class="text-xl">Latest Posts</h2>
+        <ul class="mt-4">
           {
             latestPosts?.map((post) => (
               <li class="text-sm">
-                <a href={`/blog/${post.attributes.slug}`}>
+                <a href={`/blog/${post.attributes.slug}`} class="unset rounded-sm transition-[background-size] duration-150 ease-in-out bg-left-bottom bg-[length:0%_55%] hover:bg-[length:100%_55%] bg-no-repeat bg-gradient-to-r from-primary-yellow to-primary-yellow dark:bg-none dark:hover:text-primary-yellow">
                   {post.attributes.title}
                 </a>
               </li>
