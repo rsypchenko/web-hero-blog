@@ -8,7 +8,7 @@ const tags = post.attributes.tags?.data?.map((tag: any) => tag.attributes.name);
   class="w-full flex-col p-4 rounded-lg cursor-pointer hover:shadow-2xl dark:hover:bg-slate-800 transition-all shadow-lg"
 >
   <a href={`/blog/${post.attributes.slug}`}>
-    <div class="w-full h-48 image-placeholder">
+    <div class="w-full h-56 image-placeholder">
       <img
         src={"https://fakeimg.pl/200x100?text=LOADING..."}
         data-src={image}

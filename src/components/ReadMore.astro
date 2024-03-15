@@ -5,8 +5,6 @@ import Card from "./Card.astro";
 
 const { tags } = Astro.props;
 
-console.log(tags);
-
 const articles = await fetchApi<Article[]>({
   endpoint: "articles",
   wrappedByKey: "data",

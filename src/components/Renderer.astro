@@ -16,7 +16,7 @@ const html = Markdoc.renderers.html(content);
 ---
 
 <div class="flex flex-col">
-  <img src={cover} alt={article.attributes.title} class="w-full h-96 object-cover mb-4" />
+  <img src={cover} alt={article.attributes.title} class="w-full h-auto object-cover mb-4" />
   <Fragment set:html={html} />
   <ReadMore tags={article.attributes.tags.data.map((tag: any) => tag.attributes.name)} slug={article.attributes.slug} />
 </div>
